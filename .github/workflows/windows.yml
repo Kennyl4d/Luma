@@ -1,0 +1,55 @@
+name: Luma Windows packages
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare sources
+        run: |
+          if (Test-Path 'Luma/Luma.csproj') {
+            New-Item -ItemType Directory source | Out-Null
+            git archive HEAD -o source-tree.zip
+            if ($LASTEXITCODE -ne 0) { throw 'Source export failed' }
+            Expand-Archive source-tree.zip source
+          } else {
+            Expand-Archive Luma-0.3.4-source.zip extracted
+            Move-Item extracted/Luma-0.3.4 source
+          }
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - name: Install WiX tools
+        working-directory: source
+        run: |
+          $env:DOTNET_CLI_HOME = Join-Path $PWD '.tools/cli'
+          $env:APPDATA = Join-Path $PWD '.tools/profile'
+          $env:LOCALAPPDATA = Join-Path $PWD '.tools/local'
+          $env:DOTNET_ROLL_FORWARD = 'Major'
+          dotnet tool install wix --version 5.0.2 --tool-path .tools/wix5
+          if ($LASTEXITCODE -ne 0) { throw 'WiX installation failed' }
+          & .tools/wix5/wix.exe extension add -g WixToolset.UI.wixext/5.0.2
+          if ($LASTEXITCODE -ne 0) { throw 'WiX UI extension installation failed' }
+      - name: Build portable app
+        working-directory: source
+        run: ./scripts/Build.ps1 -Portable
+      - name: Build multilingual installer
+        working-directory: source
+        run: ./scripts/Build-Installer.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: luma-windows-x64
+          path: |
+            source/artifacts/Luma-*-win-x64.zip
+            source/artifacts/Luma-Setup-*-x64.exe
+            source/artifacts/Luma-Setup-*-x64.msi
+            source/artifacts/Luma-Setup-*.sha256
+          if-no-files-found: error
