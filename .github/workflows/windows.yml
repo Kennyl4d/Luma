@@ -19,7 +19,7 @@ jobs:
             if ($LASTEXITCODE -ne 0) { throw 'Source export failed' }
             Expand-Archive source-tree.zip source
           } else {
-            Expand-Archive Luma-0.3.4-source.zip extracted
+            Expand-Archive Luma-0.3.4-windows-source.zip extracted
             Move-Item extracted/Luma-0.3.4 source
           }
       - uses: actions/setup-dotnet@v4
