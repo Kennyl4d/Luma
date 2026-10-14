@@ -1,0 +1,66 @@
+name: Luma Linux packages
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare sources
+        shell: bash
+        run: |
+          mkdir -p source
+          if test -f Luma.Linux/Luma.Linux.csproj; then
+            git archive HEAD | tar -x -C source
+          else
+            unzip -q Luma-0.3.4-linux-source.zip -d source
+          fi
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Install package tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends rpm desktop-file-utils
+      - name: Publish Linux x64
+        working-directory: source
+        run: dotnet publish Luma.Linux/Luma.Linux.csproj -c Release -r linux-x64 --self-contained true -p:PublishReadyToRun=true -p:RestoreConfigFile=NuGet.Config -o ../publish
+      - name: Debian and RPM packages
+        run: bash source/linux/package.sh "$PWD/publish" "$PWD/packages"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: luma-deb-rpm
+          path: packages/*
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: luma-arch-input
+          path: |
+            publish/
+            source/linux/
+            source/Luma/Assets/
+            source/licenses/
+            source/THIRD-PARTY-NOTICES.md
+  arch:
+    needs: build
+    runs-on: ubuntu-24.04
+    container: archlinux:base-devel
+    steps:
+      - name: Prepare Arch tools
+        run: pacman -Syu --noconfirm git sudo tesseract fontconfig libx11 libice libsm gtk3 openssl icu zstd
+      - uses: actions/download-artifact@v4
+        with:
+          name: luma-arch-input
+          path: /tmp/luma-build
+      - name: Build pacman package
+        shell: bash
+        run: |
+          useradd --create-home builder
+          cp /tmp/luma-build/source/linux/packaging/PKGBUILD /tmp/luma-build/PKGBUILD
+          chown -R builder:builder /tmp/luma-build
+          su builder -c 'cd /tmp/luma-build && makepkg --force --noconfirm'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: luma-arch
+          path: /tmp/luma-build/*.pkg.tar.zst
+          if-no-files-found: error
