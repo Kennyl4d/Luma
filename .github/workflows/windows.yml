@@ -40,7 +40,15 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'WiX UI extension installation failed' }
       - name: Build portable app
         working-directory: source
-        run: ./scripts/Build.ps1 -Portable
+        run: |
+          $project = 'Luma/Luma.csproj'
+          $xml = [xml](Get-Content $project -Raw)
+          $group = $xml.Project.PropertyGroup | Select-Object -First 1
+          $property = $xml.CreateElement('IncludeSourceRevisionInInformationalVersion')
+          $property.InnerText = 'false'
+          [void]$group.AppendChild($property)
+          $xml.Save((Join-Path $PWD $project))
+          ./scripts/Build.ps1 -Portable
       - name: Build multilingual installer
         working-directory: source
         run: ./scripts/Build-Installer.ps1
