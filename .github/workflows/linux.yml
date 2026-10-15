@@ -41,6 +41,7 @@ jobs:
             source/Luma/Assets/
             source/licenses/
             source/THIRD-PARTY-NOTICES.md
+            source/LICENSE
   arch:
     needs: build
     runs-on: ubuntu-24.04
