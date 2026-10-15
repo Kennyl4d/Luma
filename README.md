@@ -1,7 +1,7 @@
 <h1 align="center">Luma</h1>
 
 <p align="center">
-  <img src="Luma.png" alt="Luma icon" width="112" height="112">
+  <img width="112" height="112" alt="Luma" src="https://github.com/user-attachments/assets/0cc01265-5a03-4634-bfef-1842ff27d2e7" />
 </p>
 
 <p align="center">
