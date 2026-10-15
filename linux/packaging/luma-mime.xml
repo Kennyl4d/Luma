@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+ <mime-type type="image/x-dib"><comment>Device-independent bitmap</comment><glob pattern="*.dib"/></mime-type>
+</mime-info>

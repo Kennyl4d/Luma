@@ -1,0 +1,23 @@
+<!DOCTYPE policymap [
+<!ELEMENT policymap (policy)*>
+<!ATTLIST policymap xmlns CDATA #FIXED "">
+<!ELEMENT policy EMPTY>
+<!ATTLIST policy xmlns CDATA #FIXED "">
+<!ATTLIST policy domain NMTOKEN #REQUIRED>
+<!ATTLIST policy name NMTOKEN #IMPLIED>
+<!ATTLIST policy pattern CDATA #IMPLIED>
+<!ATTLIST policy rights NMTOKEN #IMPLIED>
+<!ATTLIST policy stealth NMTOKEN #IMPLIED>
+<!ATTLIST policy value CDATA #IMPLIED>
+]>
+<policymap xmlns="">
+  <policy domain="cache" name="shared-secret" value="passphrase" xmlns="" />
+  <policy domain="coder" rights="none" pattern="EPHEMERAL" xmlns="" />
+  <policy domain="coder" rights="none" pattern="MVG" xmlns="" />
+  <policy domain="coder" rights="none" pattern="MSL" xmlns="" />
+  <policy domain="path" rights="none" pattern="@*" xmlns="" />
+  <policy domain="path" rights="none" pattern="|*" xmlns="" />
+  <policy domain="coder" rights="read" pattern="MVG" />
+  <policy domain="delegate" rights="none" pattern="*" />
+  <policy domain="coder" rights="none" pattern="{HTTP,HTTPS,URL,FTP}" />
+</policymap>
