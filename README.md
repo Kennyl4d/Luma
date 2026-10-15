@@ -12,7 +12,7 @@
 <p align="center">
   <a href="../../releases/tag/windows-v0.3.4"><img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows-0078D4?style=flat-square"></a>
   <a href="../../releases/tag/linux-v0.3.4"><img alt="Download for Linux — prerelease" src="https://img.shields.io/badge/Download-Linux%20%28prerelease%29-FCC624?style=flat-square"></a>
-  <a href="../../actions/workflows/windows.yml"><img alt="Windows build" src="https://img.shields.io/github/actions/workflow/status/Yisus89/Luma/windows.yml?branch=main&label=Windows%20build&style=flat-square"></a>
+  <a href="../../actions/workflows/windows.yml"><img alt="Windows build" src="https://img.shields.io/github/actions/workflow/status/Kennyl4d/Luma/windows.yml?branch=main&label=Windows%20build&style=flat-square"></a>
   <a href="LICENSE"><img alt="License: GPL v3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square"></a>
 </p>
 
