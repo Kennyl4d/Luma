@@ -31,7 +31,7 @@ Download installers and packages from the [Releases page](../../releases).
 | Windows 10 / 11 x64 | EXE installer, MSI installer, portable ZIP |
 | Linux x86_64 | DEB, RPM, Arch Linux `.pkg.tar.zst` |
 
-**Windows requirements:** Windows 10 version 1607 (build 14393) or later, or Windows 11, 64-bit. This is the package's configured minimum; execution on Windows 10, particularly older builds and editions, has not yet been validated. The .NET runtime is included.
+**Windows requirements:** Windows 10 version 1607 (build 14393) or later, or Windows 11, 64-bit. The .NET runtime is included.
 
 **Linux status:** the Linux port is currently a prerelease. Packages have been generated, but functionality, installation, and performance still require testing on Linux desktops.
 
