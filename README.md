@@ -33,7 +33,7 @@ Download installers and packages from the [Releases page](../../releases).
 
 **Windows requirements:** Windows 10 version 1607 (build 14393) or later, or Windows 11, 64-bit. The .NET runtime is included.
 
-**Linux status:** Linux packages are included in this release. Functionality, installation, and performance still require validation on Linux desktops.
+**Linux requirements:** A modern glibc-based x86_64 distribution with a graphical desktop environment. XWayland is required on Wayland sessions. The .NET runtime is included; system dependencies are installed through your distribution's package manager.
 
 ## Features
 
