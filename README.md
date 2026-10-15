@@ -5,7 +5,7 @@ A lightweight image viewer for Windows and Linux, built around a simple idea: op
 Inspired by the simplicity of the classic Windows Photo Viewer, Luma combines essential viewing tools with modern image formats and offline text recognition.
 
 
-<img width="820" height="367" alt="674134211-2dd49cac-ff73-4ae3-b0bf-f22f1821c4e6" src="https://github.com/user-attachments/assets/8b82f24b-27e2-4963-a575-433f43eeb0be" />
+<img width="820" height="567" alt="674134211-2dd49cac-ff73-4ae3-b0bf-f22f1821c4e6" src="https://github.com/user-attachments/assets/8b82f24b-27e2-4963-a575-433f43eeb0be" />
 
 
 
