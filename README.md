@@ -16,7 +16,9 @@
   <a href="LICENSE"><img alt="License: GPL v3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square"></a>
 </p>
 
+<p align="center">
 Inspired by the simplicity of the classic Windows Photo Viewer, Luma combines essential viewing tools with modern image formats and offline text recognition.
+</p>
 
 <img width="820" height="567" alt="Luma image viewer screenshot" src="https://github.com/user-attachments/assets/8b82f24b-27e2-4963-a575-433f43eeb0be" />
 
