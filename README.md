@@ -1,22 +1,35 @@
-# Luma
+<h1 align="center">Luma</h1>
 
-A lightweight image viewer for Windows and Linux, built around a simple idea: open your images quickly, with a clean interface and no unnecessary features.
+<p align="center">
+  <img src="Luma.png" alt="Luma icon" width="112" height="112">
+</p>
+
+<p align="center">
+  <strong>A lightweight image viewer for Windows and Linux.</strong><br>
+  Open your images quickly, with a clean interface and no unnecessary features.
+</p>
+
+<p align="center">
+  <a href="../../releases/tag/windows-v0.3.4"><img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows-0078D4?style=flat-square"></a>
+  <a href="../../releases/tag/linux-v0.3.4"><img alt="Download for Linux — prerelease" src="https://img.shields.io/badge/Download-Linux%20%28prerelease%29-FCC624?style=flat-square"></a>
+  <a href="../../actions/workflows/windows.yml"><img alt="Windows build" src="https://img.shields.io/github/actions/workflow/status/Yisus89/Luma/windows.yml?branch=main&label=Windows%20build&style=flat-square"></a>
+  <a href="LICENSE"><img alt="License: GPL v3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square"></a>
+</p>
 
 Inspired by the simplicity of the classic Windows Photo Viewer, Luma combines essential viewing tools with modern image formats and offline text recognition.
 
-
-<img width="820" height="567" alt="674134211-2dd49cac-ff73-4ae3-b0bf-f22f1821c4e6" src="https://github.com/user-attachments/assets/8b82f24b-27e2-4963-a575-433f43eeb0be" />
-
-
+<img width="820" height="567" alt="Luma image viewer screenshot" src="https://github.com/user-attachments/assets/8b82f24b-27e2-4963-a575-433f43eeb0be" />
 
 ## Downloads
 
-Download installers and packages from the [Releases page](https://github.com/Yisus89/Luma/releases).
+Download installers and packages from the [Releases page](../../releases).
 
 | Platform | Available downloads |
 |---|---|
-| Windows x64 | EXE installer, MSI installer, portable ZIP |
+| Windows 10 / 11 x64 | EXE installer, MSI installer, portable ZIP |
 | Linux x86_64 | DEB, RPM, Arch Linux `.pkg.tar.zst` |
+
+**Windows requirements:** Windows 10 version 1607 (build 14393) or later, or Windows 11, 64-bit. This is the package's configured minimum; execution on Windows 10, particularly older builds and editions, has not yet been validated. The .NET runtime is included.
 
 **Linux status:** the Linux port is currently a prerelease. Packages have been generated, but functionality, installation, and performance still require testing on Linux desktops.
 
@@ -59,7 +72,7 @@ To make Luma your default image viewer, choose it in Windows default app setting
 
 ### Linux
 
-Download the package for your distribution and install it using its package manager.
+Download the package for your distribution. Open a terminal in the folder containing the downloaded file and run the appropriate command below. These commands install a **local package**; no Luma package repository is currently provided. Required dependencies may be downloaded from your distribution's repositories.
 
 **Debian / Ubuntu**
 
@@ -80,6 +93,8 @@ sudo pacman -U ./luma-0.3.4-1-x86_64.pkg.tar.zst
 ```
 
 Linux packages target modern glibc-based x86_64 systems. On Wayland desktops, Luma currently uses XWayland.
+
+To update Luma, download a newer package from Releases and install it using the same method.
 
 ## Text recognition and privacy
 
@@ -104,7 +119,7 @@ GitHub Actions workflows are provided for building Windows and Linux packages.
 
 ## Feedback
 
-Found a problem? Open an [issue](https://github.com/Yisus89/Luma/issues) and include:
+Found a problem? Open an [issue](../../issues) and include:
 
 - Your operating system and Luma version.
 - The image format involved.
