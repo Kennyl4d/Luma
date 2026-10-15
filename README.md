@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/tag/windows-v0.3.4"><img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows-0078D4?style=flat-square"></a>
-  <a href="../../releases/tag/linux-v0.3.4"><img alt="Download for Linux — prerelease" src="https://img.shields.io/badge/Download-Linux%20%28prerelease%29-FCC624?style=flat-square"></a>
+  <a href="../../releases/tag/v0.3.4"><img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows-0078D4?style=flat-square"></a>
+  <a href="../../releases/tag/v0.3.4"><img alt="Download for Linux" src="https://img.shields.io/badge/Download-Linux-FCC624?style=flat-square"></a>
   <a href="../../actions/workflows/windows.yml"><img alt="Windows build" src="https://img.shields.io/github/actions/workflow/status/Kennyl4d/Luma/windows.yml?branch=main&label=Windows%20build&style=flat-square"></a>
   <a href="LICENSE"><img alt="License: GPL v3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square"></a>
 </p>
@@ -24,7 +24,7 @@ Inspired by Windows Photo Viewer, Luma offers modern formats and offline OCR in 
 
 ## Downloads
 
-Download installers and packages from the [Releases page](../../releases).
+Windows and Linux downloads are available together in the [Luma 0.3.4 release](../../releases/tag/v0.3.4).
 
 | Platform | Available downloads |
 |---|---|
@@ -33,7 +33,7 @@ Download installers and packages from the [Releases page](../../releases).
 
 **Windows requirements:** Windows 10 version 1607 (build 14393) or later, or Windows 11, 64-bit. The .NET runtime is included.
 
-**Linux status:** the Linux port is currently a prerelease. Packages have been generated, but functionality, installation, and performance still require testing on Linux desktops.
+**Linux status:** Linux packages are included in this release. Functionality, installation, and performance still require validation on Linux desktops.
 
 ## Features
 
@@ -66,7 +66,7 @@ English, Italian, Czech, German, Spanish, French, Japanese, Korean, Polish, Braz
 
 ### Windows
 
-Download and run the EXE installer from the Releases page.
+Download and run the EXE installer from the [Releases page](../../releases).
 
 For portable use, download the Windows portable ZIP, extract it, and launch `Luma.exe`. Keep the extracted files together.
 
@@ -74,7 +74,9 @@ To make Luma your default image viewer, choose it in Windows default app setting
 
 ### Linux
 
-Download the package for your distribution. Open a terminal in the folder containing the downloaded file and run the appropriate command below. These commands install a **local package**; no Luma package repository is currently provided. Required dependencies may be downloaded from your distribution's repositories.
+Download the package for your distribution. Open a terminal in the folder containing the downloaded file and run the appropriate command below.
+
+These commands install a **local package**; no Luma package repository is currently provided. Required dependencies may be downloaded from your distribution's repositories.
 
 **Debian / Ubuntu**
 
