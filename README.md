@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-Inspired by the simplicity of the classic Windows Photo Viewer, Luma combines essential viewing tools with modern image formats and offline text recognition.
+Inspired by Windows Photo Viewer, Luma offers modern formats and offline OCR in a simple interface.
 </p>
 
 <img width="820" height="567" alt="Luma image viewer screenshot" src="https://github.com/user-attachments/assets/8b82f24b-27e2-4963-a575-433f43eeb0be" />
