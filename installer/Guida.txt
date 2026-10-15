@@ -1,0 +1,224 @@
+Luma 0.3.4 — en
+Author: KENNY
+A fast, minimal image viewer for Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Open image (Ctrl+O)
+Previous (←)
+Next (→)
+Zoom out (−)
+Zoom in (+)
+Fit to window (F)
+Actual size (1)
+Rotate view (R)
+Fullscreen (F11)
+Text recognition runs locally. Images are not sent online.
+Drag over detected words to select text. Copy with Ctrl+C or the context menu. Drag outside text to pan; hold Shift to pan over text. Recognition uses the system language and English.
+
+Luma 0.3.4 — it
+Autore: KENNY
+Un visualizzatore immagini rapido ed essenziale per Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Apri immagine (Ctrl+O)
+Precedente (←)
+Successiva (→)
+Riduci (−)
+Ingrandisci (+)
+Adatta alla finestra (F)
+Dimensioni originali (1)
+Ruota vista (R)
+Schermo intero (F11)
+Il riconoscimento del testo avviene sul PC. Le immagini non vengono inviate in rete.
+Trascina sulle parole rilevate per selezionare il testo. Copia con Ctrl+C o dal menu contestuale. Trascina fuori dal testo per spostare la foto; tieni premuto Maiusc per spostarla anche sul testo. Il riconoscimento usa la lingua di sistema e l’inglese.
+
+Luma 0.3.4 — ru
+Автор: KENNY
+Быстрый и простой просмотр изображений для Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Открыть изображение (Ctrl+O)
+Предыдущее (←)
+Следующее (→)
+Уменьшить (−)
+Увеличить (+)
+Вписать в окно (F)
+Исходный размер (1)
+Повернуть изображение (R)
+Полный экран (F11)
+Текст распознаётся на компьютере. Изображения не отправляются в интернет.
+Перетащите указатель по словам, чтобы выделить текст. Копируйте через Ctrl+C или контекстное меню. Для перемещения фото тяните вне текста или удерживайте Shift. Распознавание использует язык системы и английский.
+
+Luma 0.3.4 — de
+Autor: KENNY
+Ein schneller, einfacher Bildbetrachter für Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Bild öffnen (Strg+O)
+Vorheriges (←)
+Nächstes (→)
+Verkleinern (−)
+Vergrößern (+)
+An Fenster anpassen (F)
+Originalgröße (1)
+Ansicht drehen (R)
+Vollbild (F11)
+Die Texterkennung erfolgt lokal. Bilder werden nicht ins Internet gesendet.
+Ziehe über erkannte Wörter, um Text auszuwählen. Kopiere mit Strg+C oder dem Kontextmenü. Ziehe außerhalb des Textes, um das Foto zu verschieben, oder halte die Umschalttaste gedrückt. Erkennung in Systemsprache und Englisch.
+
+Luma 0.3.4 — fr
+Auteur: KENNY
+Une visionneuse d’images rapide et simple pour Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Ouvrir une image (Ctrl+O)
+Précédente (←)
+Suivante (→)
+Réduire (−)
+Agrandir (+)
+Adapter à la fenêtre (F)
+Taille réelle (1)
+Faire pivoter la vue (R)
+Plein écran (F11)
+Le texte est reconnu sur votre ordinateur. Les images ne sont pas envoyées en ligne.
+Faites glisser sur les mots détectés pour sélectionner le texte. Copiez avec Ctrl+C ou le menu contextuel. Faites glisser hors du texte pour déplacer la photo, ou maintenez Maj. Reconnaissance dans la langue du système et en anglais.
+
+Luma 0.3.4 — es
+Autor: KENNY
+Un visor de imágenes rápido y sencillo para Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Abrir imagen (Ctrl+O)
+Anterior (←)
+Siguiente (→)
+Reducir (−)
+Ampliar (+)
+Ajustar a la ventana (F)
+Tamaño real (1)
+Girar vista (R)
+Pantalla completa (F11)
+El texto se reconoce en el equipo. Las imágenes no se envían a internet.
+Arrastra sobre las palabras detectadas para seleccionar texto. Copia con Ctrl+C o el menú contextual. Arrastra fuera del texto para mover la foto, o mantén Mayús. Se usan el idioma del sistema y el inglés.
+
+Luma 0.3.4 — pt-BR
+Autor: KENNY
+Um visualizador de imagens rápido e simples para Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Abrir imagem (Ctrl+O)
+Anterior (←)
+Próxima (→)
+Diminuir (−)
+Ampliar (+)
+Ajustar à janela (F)
+Tamanho real (1)
+Girar visualização (R)
+Tela cheia (F11)
+O texto é reconhecido no computador. As imagens não são enviadas à internet.
+Arraste sobre as palavras detectadas para selecionar texto. Copie com Ctrl+C ou pelo menu de contexto. Arraste fora do texto para mover a foto ou mantenha Shift pressionado. São usados o idioma do sistema e o inglês.
+
+Luma 0.3.4 — cs
+Autor: KENNY
+Rychlý a jednoduchý prohlížeč obrázků pro Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Otevřít obrázek (Ctrl+O)
+Předchozí (←)
+Další (→)
+Oddálit (−)
+Přiblížit (+)
+Přizpůsobit oknu (F)
+Skutečná velikost (1)
+Otočit zobrazení (R)
+Celá obrazovka (F11)
+Rozpoznávání textu probíhá v počítači. Obrázky se neposílají na internet.
+Tažením přes rozpoznaná slova vyberete text. Kopírujte pomocí Ctrl+C nebo místní nabídky. Tažením mimo text posunete fotografii; nad textem podržte Shift. Používá se jazyk systému a angličtina.
+
+Luma 0.3.4 — pl
+Autor: KENNY
+Szybka i prosta przeglądarka obrazów dla Windows.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Otwórz obraz (Ctrl+O)
+Poprzedni (←)
+Następny (→)
+Pomniejsz (−)
+Powiększ (+)
+Dopasuj do okna (F)
+Rzeczywisty rozmiar (1)
+Obróć widok (R)
+Pełny ekran (F11)
+Tekst jest rozpoznawany lokalnie. Obrazy nie są wysyłane do internetu.
+Przeciągnij po wykrytych słowach, aby zaznaczyć tekst. Kopiuj przez Ctrl+C lub menu kontekstowe. Przeciągnij poza tekstem, aby przesunąć zdjęcie, lub przytrzymaj Shift. Używany jest język systemu i angielski.
+
+Luma 0.3.4 — tr
+Yazar: KENNY
+Windows için hızlı ve sade bir görüntü görüntüleyici.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+Görüntü aç (Ctrl+O)
+Önceki (←)
+Sonraki (→)
+Uzaklaştır (−)
+Yakınlaştır (+)
+Pencereye sığdır (F)
+Gerçek boyut (1)
+Görünümü döndür (R)
+Tam ekran (F11)
+Metin bilgisayarda tanınır. Görüntüler internete gönderilmez.
+Metni seçmek için tanınan sözcüklerin üzerinde sürükleyin. Ctrl+C veya bağlam menüsüyle kopyalayın. Fotoğrafı taşımak için metin dışında sürükleyin ya da Shift tuşunu basılı tutun. Sistem dili ve İngilizce kullanılır.
+
+Luma 0.3.4 — ja
+作者: KENNY
+Windows用の高速でシンプルな画像ビューアー。
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+画像を開く (Ctrl+O)
+前の画像 (←)
+次の画像 (→)
+縮小 (−)
+拡大 (+)
+ウィンドウに合わせる (F)
+実際のサイズ (1)
+表示を回転 (R)
+全画面表示 (F11)
+文字認識はこのPCで行われます。画像はインターネットに送信されません。
+認識された単語をドラッグしてテキストを選択します。Ctrl+Cまたは右クリックメニューでコピーできます。写真を動かすには文字以外の部分をドラッグするか、Shiftを押してください。認識にはシステムの言語と英語を使用します。
+
+Luma 0.3.4 — ko
+제작자: KENNY
+Windows용 빠르고 간단한 이미지 뷰어입니다.
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+이미지 열기 (Ctrl+O)
+이전 (←)
+다음 (→)
+축소 (−)
+확대 (+)
+창에 맞춤 (F)
+실제 크기 (1)
+보기 회전 (R)
+전체 화면 (F11)
+문자 인식은 이 PC에서 수행됩니다. 이미지는 인터넷으로 전송되지 않습니다.
+감지된 단어 위를 끌어 텍스트를 선택하세요. Ctrl+C 또는 우클릭 메뉴로 복사합니다. 사진을 이동하려면 텍스트 밖을 끌거나 Shift를 누르세요. 시스템 언어와 영어로 인식합니다.
+
+Luma 0.3.4 — zh-Hans
+作者: KENNY
+适用于 Windows 的快速、简洁图片查看器。
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+打开图片 (Ctrl+O)
+上一张 (←)
+下一张 (→)
+缩小 (−)
+放大 (+)
+适应窗口 (F)
+实际大小 (1)
+旋转视图 (R)
+全屏 (F11)
+文字识别在本机进行。图片不会上传到网络。
+在识别出的文字上拖动即可选择。按 Ctrl+C 或使用右键菜单复制。在文字以外拖动可移动图片，也可按住 Shift。识别使用系统语言和英语。
+
+Luma 0.3.4 — zh-Hant
+作者: KENNY
+適用於 Windows 的快速、簡潔圖片檢視器。
+JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
+開啟圖片 (Ctrl+O)
+上一張 (←)
+下一張 (→)
+縮小 (−)
+放大 (+)
+符合視窗 (F)
+實際大小 (1)
+旋轉檢視 (R)
+全螢幕 (F11)
+文字辨識在本機進行。圖片不會上傳至網路。
+在辨識出的文字上拖曳即可選取。按 Ctrl+C 或使用右鍵選單複製。在文字以外拖曳可移動圖片，也可按住 Shift。辨識使用系統語言及英語。
+

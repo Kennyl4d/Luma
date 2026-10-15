@@ -1,0 +1,198 @@
+[
+  {
+    "key": "en",
+    "culture": "en-US",
+    "source": "en-us",
+    "id": 1033,
+    "strings": [
+      "Luma setup for Windows 10/11",
+      "A newer version of Luma is already installed.",
+      "Luma requires Windows 10 64-bit or later. (1607+, x64)",
+      "Luma image",
+      "Image viewer",
+      "Unable to start Luma setup. Try running the installer again."
+    ]
+  },
+  {
+    "key": "it",
+    "culture": "it-IT",
+    "source": "it-it",
+    "id": 1040,
+    "strings": [
+      "Installazione di Luma per Windows 10/11",
+      "È già installata una versione più recente di Luma.",
+      "Luma richiede Windows 10 a 64 bit o successivo. (1607+, x64)",
+      "Immagine Luma",
+      "Visualizzatore immagini",
+      "Impossibile avviare l’installazione di Luma. Prova a eseguire nuovamente l’installer."
+    ]
+  },
+  {
+    "key": "cs",
+    "culture": "cs-CZ",
+    "source": "cs-CZ",
+    "id": 1029,
+    "strings": [
+      "Instalace Luma pro Windows 10/11",
+      "Novější verze aplikace Luma je již nainstalována.",
+      "Luma vyžaduje 64bitový Windows 10 nebo novější. (1607+, x64)",
+      "Obrázek Luma",
+      "Prohlížeč obrázků",
+      "Instalaci aplikace Luma nelze spustit. Zkuste instalační program spustit znovu."
+    ]
+  },
+  {
+    "key": "de",
+    "culture": "de-DE",
+    "source": "de-de",
+    "id": 1031,
+    "strings": [
+      "Luma-Installation für Windows 10/11",
+      "Eine neuere Version von Luma ist bereits installiert.",
+      "Luma erfordert Windows 10 mit 64 Bit oder neuer. (1607+, x64)",
+      "Luma-Bild",
+      "Bildbetrachter",
+      "Die Installation von Luma konnte nicht gestartet werden. Starten Sie das Installationsprogramm erneut."
+    ]
+  },
+  {
+    "key": "es",
+    "culture": "es-ES",
+    "source": "es-es",
+    "id": 3082,
+    "strings": [
+      "Instalación de Luma para Windows 10/11",
+      "Ya está instalada una versión más reciente de Luma.",
+      "Luma requiere Windows 10 de 64 bits o posterior. (1607+, x64)",
+      "Imagen de Luma",
+      "Visor de imágenes",
+      "No se pudo iniciar la instalación de Luma. Vuelva a ejecutar el instalador."
+    ]
+  },
+  {
+    "key": "fr",
+    "culture": "fr-FR",
+    "source": "fr-fr",
+    "id": 1036,
+    "strings": [
+      "Installation de Luma pour Windows 10/11",
+      "Une version plus récente de Luma est déjà installée.",
+      "Luma nécessite Windows 10 64 bits ou une version ultérieure. (1607+, x64)",
+      "Image Luma",
+      "Visionneuse d’images",
+      "Impossible de démarrer l’installation de Luma. Relancez le programme d’installation."
+    ]
+  },
+  {
+    "key": "ja",
+    "culture": "ja-JP",
+    "source": "ja-jp",
+    "id": 1041,
+    "strings": [
+      "Windows 10/11 用 Luma のセットアップ",
+      "新しいバージョンの Luma が既にインストールされています。",
+      "Luma には 64 ビット版 Windows 10 以降が必要です。 (1607+, x64)",
+      "Luma 画像",
+      "画像ビューアー",
+      "Luma のセットアップを開始できませんでした。インストーラーをもう一度実行してください。"
+    ]
+  },
+  {
+    "key": "ko",
+    "culture": "ko-KR",
+    "source": "ko-KR",
+    "id": 1042,
+    "strings": [
+      "Windows 10/11용 Luma 설치",
+      "더 최신 버전의 Luma가 이미 설치되어 있습니다.",
+      "Luma는 64비트 Windows 10 이상이 필요합니다. (1607+, x64)",
+      "Luma 이미지",
+      "이미지 뷰어",
+      "Luma 설치를 시작할 수 없습니다. 설치 프로그램을 다시 실행하세요."
+    ]
+  },
+  {
+    "key": "pl",
+    "culture": "pl-PL",
+    "source": "pl-pl",
+    "id": 1045,
+    "strings": [
+      "Instalacja Luma dla Windows 10/11",
+      "Nowsza wersja programu Luma jest już zainstalowana.",
+      "Luma wymaga 64-bitowego systemu Windows 10 lub nowszego. (1607+, x64)",
+      "Obraz Luma",
+      "Przeglądarka obrazów",
+      "Nie można rozpocząć instalacji Luma. Uruchom instalator ponownie."
+    ]
+  },
+  {
+    "key": "pt-BR",
+    "culture": "pt-BR",
+    "source": "pt-BR",
+    "id": 1046,
+    "strings": [
+      "Instalação do Luma para Windows 10/11",
+      "Uma versão mais recente do Luma já está instalada.",
+      "O Luma requer o Windows 10 de 64 bits ou posterior. (1607+, x64)",
+      "Imagem do Luma",
+      "Visualizador de imagens",
+      "Não foi possível iniciar a instalação do Luma. Execute o instalador novamente."
+    ]
+  },
+  {
+    "key": "ru",
+    "culture": "ru-RU",
+    "source": "ru-ru",
+    "id": 1049,
+    "strings": [
+      "Установка Luma для Windows 10/11",
+      "Уже установлена более новая версия Luma.",
+      "Для Luma требуется 64-разрядная Windows 10 или более новая версия. (1607+, x64)",
+      "Изображение Luma",
+      "Просмотр изображений",
+      "Не удалось запустить установку Luma. Попробуйте запустить установщик ещё раз."
+    ]
+  },
+  {
+    "key": "tr",
+    "culture": "tr-TR",
+    "source": "tr-TR",
+    "id": 1055,
+    "strings": [
+      "Windows 10/11 için Luma kurulumu",
+      "Luma’nın daha yeni bir sürümü zaten yüklü.",
+      "Luma, 64 bit Windows 10 veya üzerini gerektirir. (1607+, x64)",
+      "Luma görüntüsü",
+      "Görüntü görüntüleyici",
+      "Luma kurulumu başlatılamadı. Yükleyiciyi tekrar çalıştırın."
+    ]
+  },
+  {
+    "key": "zh-Hans",
+    "culture": "zh-CN",
+    "source": "zh-CN",
+    "id": 2052,
+    "strings": [
+      "适用于 Windows 10/11 的 Luma 安装程序",
+      "已安装更新版本的 Luma。",
+      "Luma 需要 64 位 Windows 10 或更高版本。 (1607+, x64)",
+      "Luma 图像",
+      "图像查看器",
+      "无法启动 Luma 安装程序。请重新运行安装程序。"
+    ]
+  },
+  {
+    "key": "zh-Hant",
+    "culture": "zh-TW",
+    "source": "zh-TW",
+    "id": 1028,
+    "strings": [
+      "適用於 Windows 10/11 的 Luma 安裝程式",
+      "已安裝更新版本的 Luma。",
+      "Luma 需要 64 位元 Windows 10 或更新版本。 (1607+, x64)",
+      "Luma 圖像",
+      "圖片檢視器",
+      "無法啟動 Luma 安裝程式。請重新執行安裝程式。"
+    ]
+  }
+]

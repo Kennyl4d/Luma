@@ -1,0 +1,6 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="Luma.AboutWindow" Title="{DynamicResource L.About}" Width="560" SizeToContent="Height" CanResize="False" WindowStartupLocation="CenterOwner" Background="{DynamicResource PanelBrush}" Foreground="{DynamicResource TextBrush}" FontSize="14">
+ <StackPanel Margin="26" Spacing="12"><TextBlock Text="Luma" FontSize="30"/><TextBlock Text="{DynamicResource L.Description}" TextWrapping="Wrap"/>
+ <Grid ColumnDefinitions="140,*" RowDefinitions="Auto,Auto,Auto"><TextBlock Text="{DynamicResource L.Version}"/><TextBlock x:Name="VersionValue" Grid.Column="1"/><TextBlock Text="{DynamicResource L.Author}" Grid.Row="1"/><TextBlock Text="KENNY" Grid.Row="1" Grid.Column="1"/><TextBlock Text="{DynamicResource L.Formats}" Grid.Row="2"/><TextBlock Grid.Row="2" Grid.Column="1" Text="JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG" TextWrapping="Wrap"/></Grid>
+ <TextBlock Text="{DynamicResource L.Privacy}" TextWrapping="Wrap" Foreground="{DynamicResource MutedBrush}"/><TextBlock Text="{DynamicResource L.SelectionTip}" TextWrapping="Wrap" Foreground="{DynamicResource MutedBrush}"/><Button Content="{DynamicResource L.Close}" HorizontalAlignment="Right" Click="CloseClick"/>
+ </StackPanel>
+</Window>

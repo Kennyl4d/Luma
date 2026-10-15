@@ -1,0 +1,55 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package Name="Luma" Manufacturer="KENNY" Version="$(var.AppVersion)" Language="!(loc.LanguageId)" ProductCode="$(var.ProductCode)"
+      UpgradeCode="96D16DAB-6DCA-44CE-9460-9478486150F1" Scope="perUser" InstallerVersion="500">
+    <SummaryInformation Description="!(loc.SetupDescription)"/>
+    <MajorUpgrade DowngradeErrorMessage="!(loc.NewerVersion)" IgnoreLanguage="yes" Schedule="afterInstallInitialize"/>
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high"/>
+    <Property Id="OSBUILD"><RegistrySearch Id="FindOsBuild" Root="HKLM" Key="Software\Microsoft\Windows NT\CurrentVersion" Name="CurrentBuildNumber" Type="raw" Bitness="always64"/></Property>
+    <Launch Condition="Installed OR (VersionNT64 AND OSBUILD &gt;= 14393)" Message="!(loc.WindowsRequired)"/>
+    <Icon Id="LumaIcon" SourceFile="$(var.ProjectRoot)\Luma\Assets\Luma.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="LumaIcon"/>
+    <SetProperty Id="ARPINSTALLLOCATION" Value="[INSTALLFOLDER]" After="CostFinalize" Sequence="execute"/>
+    <Property Id="LEGACYINSTALLDIR">
+      <RegistrySearch Id="FindLegacyInstall" Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\Luma" Name="InstallLocation" Type="raw" Bitness="always64"/>
+    </Property>
+    <Property Id="EXISTINGINSTALLDIR">
+      <RegistrySearch Id="FindMsiInstall" Root="HKCU" Key="Software\Luma\Installer" Name="InstallLocation" Type="raw" Bitness="always64"/>
+    </Property>
+    <SetProperty Id="INSTALLFOLDER" Action="SetLegacyFolder" Value="[LEGACYINSTALLDIR]" Before="CostFinalize" Sequence="both" Condition="LEGACYINSTALLDIR AND NOT EXISTINGINSTALLDIR AND NOT Installed AND NOT INSTALLFOLDER"/>
+    <SetProperty Id="INSTALLFOLDER" Action="SetMsiFolder" Value="[EXISTINGINSTALLDIR]" Before="CostFinalize" Sequence="both" Condition="EXISTINGINSTALLDIR AND NOT INSTALLFOLDER"/>
+    <StandardDirectory Id="LocalAppDataFolder">
+      <Directory Id="UserProgramsDir" Name="Programs"><Directory Id="INSTALLFOLDER" Name="Luma"/></Directory>
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder"/>
+    <Feature Id="LumaFeature" Title="Luma" Level="1">
+      <ComponentGroupRef Id="LumaPayload"/>
+      <ComponentRef Id="AppIntegration"/>
+    </Feature>
+    <Component Id="AppIntegration" Directory="INSTALLFOLDER" Guid="*" Bitness="always64">
+      <RegistryValue Root="HKCU" Key="Software\Luma\Installer" Name="InstallLocation" Type="string" Value="[INSTALLFOLDER]" KeyPath="yes"/>
+      <RegistryValue Root="HKCU" Key="Software\Luma\Capabilities" Name="ApplicationName" Type="string" Value="Luma"/>
+      <RegistryValue Root="HKCU" Key="Software\Luma\Capabilities" Name="ApplicationDescription" Type="string" Value="JPEG / PNG / GIF / HEIC / HEIF / WebP / AVIF / BMP / DIB / TIFF / ICO / SVG"/>
+      <RegistryValue Root="HKCU" Key="Software\Luma\Capabilities" Name="ApplicationIcon" Type="string" Value="[INSTALLFOLDER]Luma.exe,0"/>
+      <RegistryValue Root="HKCU" Key="Software\RegisteredApplications" Name="Luma" Type="string" Value="Software\Luma\Capabilities"/>
+      <RegistryValue Root="HKCU" Key="Software\Classes\Luma.Image" Type="string" Value="!(loc.ImageDescription)"/>
+      <RegistryValue Root="HKCU" Key="Software\Classes\Luma.Image\DefaultIcon" Type="string" Value="&quot;[INSTALLFOLDER]Luma.exe&quot;,0"/>
+      <RegistryValue Root="HKCU" Key="Software\Classes\Luma.Image\shell\open\command" Type="string" Value="&quot;[INSTALLFOLDER]Luma.exe&quot; &quot;%1&quot;"/>
+      <?foreach Extension in .jpg;.jpeg;.png;.gif;.heic;.heif;.webp;.avif;.bmp;.dib;.tif;.tiff;.ico;.svg ?>
+        <RegistryValue Root="HKCU" Key="Software\Classes\$(var.Extension)\OpenWithProgids" Name="Luma.Image" Type="string" Value=""/>
+        <RegistryValue Root="HKCU" Key="Software\Luma\Capabilities\FileAssociations" Name="$(var.Extension)" Type="string" Value="Luma.Image"/>
+      <?endforeach?>
+      <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="Luma" Description="!(loc.ViewerDescription)" Target="[INSTALLFOLDER]Luma.exe" WorkingDirectory="INSTALLFOLDER" Icon="LumaIcon"/>
+      <RemoveRegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\Luma" Action="removeOnInstall"/>
+      <RemoveFile Id="LegacyInstallScript" Name="Install.ps1" On="install"/>
+      <RemoveFile Id="LegacyUninstallScript" Name="Uninstall.ps1" On="install"/>
+      <RemoveFile Id="LegacyManifest" Name="installed-files.txt" On="install"/>
+      <RemoveFolder Id="RemoveInstallFolder" On="uninstall"/>
+    </Component>
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER"/>
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectRoot)\installer\Informazioni.rtf"/>
+    <UI>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg" Order="2" Condition="NOT Installed"/>
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2" Condition="NOT Installed"/>
+    </UI>
+  </Package>
+</Wix>

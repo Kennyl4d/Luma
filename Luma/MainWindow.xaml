@@ -1,0 +1,51 @@
+<Window x:Class="Luma.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ocr="clr-namespace:Luma.Ocr"
+  Title="Luma" Icon="Assets/Luma.ico" Width="1080" Height="760" MinWidth="760" MinHeight="360" Background="{DynamicResource CanvasBrush}" Foreground="{DynamicResource TextBrush}"
+  FontFamily="Segoe UI Variable, Segoe UI" FontSize="14" WindowStartupLocation="CenterScreen"
+  AllowDrop="True" Drop="OnDrop" PreviewKeyDown="OnKeyDown" SourceInitialized="OnSourceInitialized">
+  <Grid>
+    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+    <Border x:Name="Toolbar" Background="{DynamicResource PanelBrush}" Padding="8,4">
+      <DockPanel LastChildFill="False">
+        <Button Content="{DynamicResource L.Open}" ToolTip="{DynamicResource L.OpenTip}" Click="OpenClick"/>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+          <Button x:Name="PreviousButton" Content="‹" FontSize="20" ToolTip="{DynamicResource L.PreviousTip}" Click="PreviousClick" IsEnabled="False"/>
+          <Button x:Name="NextButton" Content="›" FontSize="20" ToolTip="{DynamicResource L.NextTip}" Click="NextClick" IsEnabled="False"/>
+          <Button Content="−" ToolTip="{DynamicResource L.ZoomOutTip}" Click="ZoomOutClick"/>
+          <Button Content="+" ToolTip="{DynamicResource L.ZoomInTip}" Click="ZoomInClick"/>
+          <Button Content="{DynamicResource L.Fit}" ToolTip="{DynamicResource L.FitTip}" Click="FitClick"/>
+          <Button Content="100%" ToolTip="{DynamicResource L.ActualTip}" Click="ActualClick"/>
+          <Button Content="↻" FontSize="20" ToolTip="{DynamicResource L.RotateTip}" Click="RotateClick"/>
+          <Button Content="⛶" FontSize="20" ToolTip="{DynamicResource L.FullscreenTip}" Click="FullscreenClick"/>
+          <Button x:Name="ThemeButton" Content="{DynamicResource L.Theme}" ToolTip="{DynamicResource L.ThemeTip}" Click="ThemeClick">
+            <Button.ContextMenu>
+              <ContextMenu>
+                <MenuItem x:Name="LightThemeItem" Header="{DynamicResource L.Light}" IsCheckable="True" Tag="Light" Click="ThemeSelected"/>
+                <MenuItem x:Name="DarkThemeItem" Header="{DynamicResource L.Dark}" IsCheckable="True" Tag="Dark" Click="ThemeSelected"/>
+                <MenuItem x:Name="SystemThemeItem" Header="{DynamicResource L.SystemTheme}" IsCheckable="True" Tag="System" Click="ThemeSelected"/>
+              </ContextMenu>
+            </Button.ContextMenu>
+          </Button>
+          <Button Content="ⓘ" ToolTip="{DynamicResource L.About}" Click="AboutClick"/>
+        </StackPanel>
+      </DockPanel>
+    </Border>
+    <ScrollViewer x:Name="Viewport" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+      Style="{StaticResource ImageScrollViewer}" SizeChanged="ViewportChanged" PreviewMouseWheel="OnWheel" Background="{DynamicResource CanvasBrush}"
+      PreviewMouseLeftButtonDown="PanStart" PreviewMouseLeftButtonUp="PanEnd" PreviewMouseMove="PanMove" LostMouseCapture="PanLost">
+      <Grid x:Name="ImageSurface" HorizontalAlignment="Center" VerticalAlignment="Center" ContextMenuOpening="TextMenuOpening">
+        <Grid.LayoutTransform><RotateTransform x:Name="Rotation"/></Grid.LayoutTransform>
+        <Grid.ContextMenu><ContextMenu>
+          <MenuItem x:Name="CopyTextItem" Header="{DynamicResource L.Copy}" Click="CopyTextClick"/>
+          <MenuItem Header="{DynamicResource L.CopyAll}" Click="CopyAllTextClick"/>
+        </ContextMenu></Grid.ContextMenu>
+        <Image x:Name="Picture" Stretch="Fill" RenderOptions.BitmapScalingMode="HighQuality"/>
+        <ocr:TextSelectionOverlay x:Name="TextOverlay"/>
+      </Grid>
+    </ScrollViewer>
+    <TextBlock x:Name="Message" Grid.Row="1" Text="{DynamicResource L.Empty}" Foreground="{DynamicResource MutedBrush}"
+      HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" MaxWidth="460" Margin="20" IsHitTestVisible="False"/>
+    <Border x:Name="StatusBar" Grid.Row="2" Padding="12,7" Background="{DynamicResource PanelBrush}">
+      <TextBlock x:Name="Status" Foreground="{DynamicResource MutedBrush}" FontSize="12" Text="{DynamicResource L.Description}" TextTrimming="CharacterEllipsis"/>
+    </Border>
+  </Grid>
+</Window>

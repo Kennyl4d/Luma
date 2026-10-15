@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets/Luma.ico</ApplicationIcon>
+    <AssemblyName>Luma</AssemblyName>
+    <Version>0.3.4</Version>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <Authors>KENNY</Authors>
+    <Company>KENNY</Company>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup><PackageReference Include="Magick.NET-Q8-x64" Version="15.0.0" /><PackageReference Include="Tesseract" Version="5.2.0" /></ItemGroup>
+  <ItemGroup><Resource Include="Assets/Luma.ico" /></ItemGroup>
+  <ItemGroup><Content Include="../LICENSE" Link="licenses/Luma-GPL-3.0.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="Resources/Strings.json"/><Content Include="tessdata/*.traineddata" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest"/></ItemGroup>
+  <ItemGroup><Content Include="NativeRuntime/*.dll" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /></ItemGroup>
+  <ItemGroup><Content Include="DecoderConfig/*.xml" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /></ItemGroup>
+  <Target Name="ExcludeOcrX86" BeforeTargets="AssignTargetPaths">
+    <ItemGroup><None Remove="@(None)" Condition="'%(None.Link)' == 'x86\leptonica-1.82.0.dll' Or '%(None.Link)' == 'x86\tesseract50.dll'" /></ItemGroup>
+  </Target>
+</Project>

@@ -24,7 +24,7 @@ Inspired by Windows Photo Viewer, Luma offers modern formats and offline OCR in 
 
 ## Downloads
 
-Windows and Linux downloads are available together in the [Luma 0.3.4 release](../../releases/tag/v0.3.4).
+Download installers and packages from the [Releases page](../../releases).
 
 | Platform | Available downloads |
 |---|---|
@@ -66,7 +66,7 @@ English, Italian, Czech, German, Spanish, French, Japanese, Korean, Polish, Braz
 
 ### Windows
 
-Download and run the EXE installer from the [Releases page](../../releases).
+Download and run the EXE installer from the Releases page.
 
 For portable use, download the Windows portable ZIP, extract it, and launch `Luma.exe`. Keep the extracted files together.
 
@@ -74,9 +74,7 @@ To make Luma your default image viewer, choose it in Windows default app setting
 
 ### Linux
 
-Download the package for your distribution. Open a terminal in the folder containing the downloaded file and run the appropriate command below.
-
-These commands install a **local package**; no Luma package repository is currently provided. Required dependencies may be downloaded from your distribution's repositories.
+Download the package for your distribution. Open a terminal in the folder containing the downloaded file and run the appropriate command below. These commands install a **local package**; no Luma package repository is currently provided. Required dependencies may be downloaded from your distribution's repositories.
 
 **Debian / Ubuntu**
 
@@ -110,7 +108,7 @@ Text recognition is not available for animated GIFs.
 
 ## Source code and builds
 
-Windows and Linux source archives are available in this repository.
+Windows and Linux source files are available directly in this repository. Build instructions and the directory layout are documented in [Building from source](docs/BUILDING.md).
 
 The project uses:
 

@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ocr="using:Luma.Ocr" x:Class="Luma.MainWindow"
+ Title="Luma" Width="1080" Height="760" MinWidth="760" MinHeight="360" Background="{DynamicResource CanvasBrush}" Foreground="{DynamicResource TextBrush}" FontSize="14" WindowStartupLocation="CenterScreen">
+ <Window.Styles><Style Selector="Button"><Setter Property="Background" Value="Transparent"/><Setter Property="Padding" Value="10,5"/><Setter Property="Margin" Value="2"/><Setter Property="MinHeight" Value="34"/><Setter Property="CornerRadius" Value="6"/></Style><Style Selector="ScrollBar"><Setter Property="Background" Value="{DynamicResource ScrollTrackBrush}"/></Style></Window.Styles>
+ <Grid RowDefinitions="Auto,*,Auto">
+  <Border x:Name="Toolbar" Background="{DynamicResource PanelBrush}" Padding="8,4">
+   <DockPanel LastChildFill="False">
+    <Button Content="{DynamicResource L.Open}" ToolTip.Tip="{DynamicResource L.OpenTip}" Click="OpenClick"/>
+    <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+     <Button x:Name="PreviousButton" Content="‹" ToolTip.Tip="{DynamicResource L.PreviousTip}" Click="PreviousClick" IsEnabled="False"/>
+     <Button x:Name="NextButton" Content="›" ToolTip.Tip="{DynamicResource L.NextTip}" Click="NextClick" IsEnabled="False"/>
+     <Button Content="−" ToolTip.Tip="{DynamicResource L.ZoomOutTip}" Click="ZoomOutClick"/>
+     <Button Content="+" ToolTip.Tip="{DynamicResource L.ZoomInTip}" Click="ZoomInClick"/>
+     <Button Content="{DynamicResource L.Fit}" ToolTip.Tip="{DynamicResource L.FitTip}" Click="FitClick"/>
+     <Button Content="100%" ToolTip.Tip="{DynamicResource L.ActualTip}" Click="ActualClick"/>
+     <Button Content="↻" ToolTip.Tip="{DynamicResource L.RotateTip}" Click="RotateClick"/>
+     <Button Content="⛶" ToolTip.Tip="{DynamicResource L.FullscreenTip}" Click="FullscreenClick"/>
+     <Button x:Name="ThemeButton" Content="{DynamicResource L.Theme}" ToolTip.Tip="{DynamicResource L.ThemeTip}" Click="ThemeClick">
+      <Button.ContextMenu><ContextMenu><MenuItem x:Name="LightThemeItem" Header="{DynamicResource L.Light}" ToggleType="CheckBox" Tag="Light" Click="ThemeSelected"/><MenuItem x:Name="DarkThemeItem" Header="{DynamicResource L.Dark}" ToggleType="CheckBox" Tag="Dark" Click="ThemeSelected"/><MenuItem x:Name="SystemThemeItem" Header="{DynamicResource L.SystemTheme}" ToggleType="CheckBox" Tag="System" Click="ThemeSelected"/></ContextMenu></Button.ContextMenu>
+     </Button>
+     <Button Content="ⓘ" ToolTip.Tip="{DynamicResource L.About}" Click="AboutClick"/>
+    </StackPanel>
+   </DockPanel>
+  </Border>
+  <ScrollViewer x:Name="Viewport" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{DynamicResource CanvasBrush}">
+   <LayoutTransformControl x:Name="TransformSurface"><LayoutTransformControl.LayoutTransform><RotateTransform/></LayoutTransformControl.LayoutTransform>
+    <Grid x:Name="ImageSurface">
+     <Grid.ContextMenu><ContextMenu x:Name="TextMenu"><MenuItem x:Name="CopyTextItem" Header="{DynamicResource L.Copy}" Click="CopyTextClick"/><MenuItem Header="{DynamicResource L.CopyAll}" Click="CopyAllTextClick"/></ContextMenu></Grid.ContextMenu>
+     <Image x:Name="Picture" Stretch="Fill" RenderOptions.BitmapInterpolationMode="HighQuality"/><ocr:TextSelectionOverlay x:Name="TextOverlay"/>
+    </Grid>
+   </LayoutTransformControl>
+  </ScrollViewer>
+  <TextBlock x:Name="Message" Grid.Row="1" Text="{DynamicResource L.Empty}" Foreground="{DynamicResource MutedBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" MaxWidth="460" Margin="20" IsHitTestVisible="False"/>
+  <Border x:Name="StatusBar" Grid.Row="2" Padding="12,7" Background="{DynamicResource PanelBrush}"><TextBlock x:Name="Status" Foreground="{DynamicResource MutedBrush}" FontSize="12" Text="{DynamicResource L.Description}" TextTrimming="CharacterEllipsis"/></Border>
+ </Grid>
+</Window>
