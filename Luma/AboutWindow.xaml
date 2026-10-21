@@ -12,6 +12,9 @@
   </Grid>
   <TextBlock Text="{DynamicResource L.Privacy}" TextWrapping="Wrap" Foreground="{DynamicResource MutedBrush}" Margin="0,20,0,10"/>
   <TextBlock Text="{DynamicResource L.SelectionTip}" TextWrapping="Wrap" Foreground="{DynamicResource MutedBrush}" Margin="0,0,0,18"/>
+  <Button x:Name="CheckUpdatesButton" Content="{DynamicResource L.CheckUpdates}" HorizontalAlignment="Left" Click="CheckUpdatesClick"/>
+  <TextBlock x:Name="UpdateStatus" TextWrapping="Wrap" Margin="0,8,0,8" AutomationProperties.LiveSetting="Polite"/>
+  <Button x:Name="OpenReleaseButton" Content="{DynamicResource L.OpenRelease}" HorizontalAlignment="Left" Click="OpenReleaseClick" Visibility="Collapsed"/>
   <Button Content="{DynamicResource L.Close}" HorizontalAlignment="Right" IsCancel="True" Click="CloseClick"/>
  </StackPanel>
 </Window>

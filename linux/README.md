@@ -1,4 +1,4 @@
-# Luma 0.3.4 — port Linux
+# Luma 0.3.5 — port Linux
 
 Autore: KENNY. .NET 10 autonomo, Avalonia 12.1.4, Magick.NET 15.0.0, Tesseract C API 5 del sistema. Modelli OCR per le 14 lingue inclusi. Architettura Linux glibc x86_64/amd64. Il progetto Windows resta separato.
 
@@ -10,7 +10,7 @@ Il port è compilato per Linux x64 e sono generati .deb, .rpm e .pkg.tar.zst usa
 
 JPEG/PNG/GIF/HEIC/HEIF/WebP/AVIF/BMP/DIB/TIFF/ICO/SVG; riconoscimento firme dei file; orientamento EXIF; GIF animate con offset/trasparenza/disposal/delay e cicli; navigazione numerica naturale; zoom/100%/adatta/HiDPI; fullscreen; rotazione della vista; apertura tramite file picker, drag-and-drop e associazioni desktop; 14 lingue automatiche; temi chiaro/scuro/sistema persistenti; scroll adattato al tema; informazioni/versione/autore/icona; riconoscimento locale del testo, selezione per parole, Ctrl+C/menu/Copia tutto e Maiusc per pan sopra il testo.
 
-Restano gli stessi limiti della 0.3.4 Windows: file 128 MiB, immagini 40 MP, GIF 1000 frame/24 milioni di pixel canvas, TIFF prima pagina, ICO variante maggiore, HEIF/AVIF/WebP immagine primaria/primo frame, SVG statico filtrato, OCR su copia fino a 2200 pixel con lingua sistema+inglese; niente OCR su GIF animate. Non sono aggiunte animazioni APNG/WebP, assenti su Windows.
+Non sono più applicati i limiti di 128 MiB per file e 40 MP per immagine: contano memoria disponibile e capacità del decoder. Restano gli altri limiti della versione Windows: GIF 1000 frame/24 milioni di pixel canvas, TIFF prima pagina, ICO variante maggiore, HEIF/AVIF/WebP immagine primaria/primo frame, SVG statico filtrato, OCR su copia fino a 2200 pixel con lingua sistema+inglese; niente OCR su GIF animate. Non sono aggiunte animazioni APNG/WebP, assenti su Windows.
 
 Il backend X11 stabile di Avalonia conserva icona e integrazioni; su desktop Wayland usa XWayland. Non usa Wine. Il nuovo backend Wayland nativo non ha ancora tutte le integrazioni X11, quindi non viene selezionato. Installare/abilitare XWayland nelle sessioni Wayland. Le decorazioni della finestra e l'installer sono quelli del desktop e del gestore pacchetti Linux: non si possono riutilizzare DWM, WPF o il wizard MSI di Windows.
 
@@ -19,9 +19,9 @@ La lingua segue LANGUAGE/LC_ALL/LC_MESSAGES/LANG, con inglese di fallback; cambi
 ## Installare
 
 ```sh
-sudo apt install ./luma_0.3.4-1_amd64.deb
-sudo dnf install ./luma-0.3.4-1.x86_64.rpm
-sudo pacman -U ./luma-0.3.4-1-x86_64.pkg.tar.zst
+sudo apt install ./luma_0.3.5-1_amd64.deb
+sudo dnf install ./luma-0.3.5-1.x86_64.rpm
+sudo pacman -U ./luma-0.3.5-1-x86_64.pkg.tar.zst
 ```
 
 Installazione /usr/lib/luma, launcher /usr/bin/luma, voce luma.desktop, icona e MIME inclusi. Selezionare Luma in «Apri con» per impostarla come predefinita: il pacchetto non sovrascrive le preferenze personali. Tema conservato alla disinstallazione.

@@ -31,7 +31,7 @@ foreach ($language in $guideCatalog.languages.psobject.Properties) {
     $strings = @{}; for ($i=0; $i -lt $guideCatalog.keys.Count; $i++) { $strings[$guideCatalog.keys[$i]] = $language.Value[$i] }
     $guide.Add("Luma $version — $($language.Name)"); $guide.Add("$($strings.Author): KENNY")
     $guide.Add($strings.Description); $guide.Add('JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG')
-    foreach ($key in 'OpenTip','PreviousTip','NextTip','ZoomOutTip','ZoomInTip','FitTip','ActualTip','RotateTip','FullscreenTip','Privacy','SelectionTip') { $guide.Add($strings[$key]) }
+    foreach ($key in 'OpenTip','PreviousTip','NextTip','ZoomOutTip','ZoomInTip','FitTip','ActualTip','RotateTip','FullscreenTip','Privacy','SelectionTip','CheckUpdates') { $guide.Add($strings[$key]) }
     $guide.Add('')
 }
 $guide | Set-Content (Join-Path $projectRoot 'installer\Guida.txt') -Encoding utf8

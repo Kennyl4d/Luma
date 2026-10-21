@@ -18,6 +18,7 @@ public partial class MainWindow : Window
     private readonly OcrService ocr = new();
     private CancellationTokenSource? ocrCancellation;
     private bool selectingText;
+    private bool ocrEnabled;
     private string? ocrStatus;
     private HwndSource? windowSource;
     private readonly DispatcherTimer animation = new(DispatcherPriority.Render);
@@ -53,7 +54,7 @@ public partial class MainWindow : Window
     {
         loadCancellation?.Cancel();
         ocrCancellation?.Cancel();
-        TextOverlay.SetText(null); ocrStatus = null;
+        ResetOcr();
         var cancellation = new CancellationTokenSource();
         loadCancellation = cancellation;
         var token = cancellation.Token;
@@ -73,7 +74,7 @@ public partial class MainWindow : Window
             Message.Visibility = Visibility.Collapsed;
             Title = $"{Path.GetFileName(path)} — Luma";
             UpdateScale();
-            if (!loaded.Animated) QueueRecognition(loaded);
+            OcrButton.IsEnabled = !loaded.Animated;
             if (loaded.Animated) { animation.Interval = loaded.Frames[0].Delay; animation.Start(); }
             if (rescan)
             {
@@ -91,7 +92,7 @@ public partial class MainWindow : Window
             UpdateNavigation();
         }
         catch (OperationCanceledException) { }
-        catch (Exception error) when (error is not OutOfMemoryException)
+        catch (Exception error)
         {
             if (!closed && !token.IsCancellationRequested)
             {
@@ -152,7 +153,22 @@ public partial class MainWindow : Window
         if (target < 0 || target >= folder.Length) return;
         index = target; await OpenAsync(folder[target], false);
     }
-    private void ChangeZoom(double factor) { if (document == null) return; fit = false; zoom = Math.Clamp(zoom * factor, 0.01, 16); UpdateScale(); }
+    private void ChangeZoom(double factor, Point? pointer = null)
+    {
+        if (document == null) return;
+        Viewport.UpdateLayout();
+        var anchor = pointer ?? new Point(Viewport.ViewportWidth / 2, Viewport.ViewportHeight / 2);
+        var imagePoint = Viewport.TranslatePoint(anchor, ImageSurface);
+        double oldZoom = zoom;
+        fit = false; zoom = Math.Clamp(zoom * factor, 0.01, 16);
+        UpdateScale();
+        Viewport.UpdateLayout();
+        // Translate through the image's rotation and centered layout after resizing.
+        var moved = ImageSurface.TranslatePoint(new Point(imagePoint.X * zoom / oldZoom, imagePoint.Y * zoom / oldZoom), Viewport);
+        Viewport.ScrollToHorizontalOffset(Viewport.HorizontalOffset + moved.X - anchor.X);
+        Viewport.ScrollToVerticalOffset(Viewport.VerticalOffset + moved.Y - anchor.Y);
+        Viewport.UpdateLayout();
+    }
     private void Fit() { fit = true; UpdateScale(); Viewport.ScrollToHorizontalOffset(0); Viewport.ScrollToVerticalOffset(0); }
     private void Rotate() { Rotation.Angle = (Rotation.Angle + 90) % 360; UpdateScale(); }
     private void ToggleFullscreen()
@@ -189,7 +205,7 @@ public partial class MainWindow : Window
     private void FullscreenClick(object sender, RoutedEventArgs e) => ToggleFullscreen();
     private void ViewportChanged(object sender, SizeChangedEventArgs e) => UpdateScale();
     protected override void OnDpiChanged(DpiScale oldDpi, DpiScale newDpi) { base.OnDpiChanged(oldDpi, newDpi); UpdateScale(); }
-    private void OnWheel(object sender, MouseWheelEventArgs e) { ChangeZoom(e.Delta > 0 ? 1.25 : 1 / 1.25); e.Handled = true; }
+    private void OnWheel(object sender, MouseWheelEventArgs e) { ChangeZoom(e.Delta > 0 ? 1.25 : 1 / 1.25, e.GetPosition(Viewport)); e.Handled = true; }
     private async void OnDrop(object sender, DragEventArgs e)
     {
         if (e.Data.GetData(DataFormats.FileDrop) is string[] { Length: > 0 } files) await OpenAsync(files[0]);
@@ -289,10 +305,35 @@ public partial class MainWindow : Window
         try { Clipboard.SetText(value); }
         catch (ExternalException) { Status.Text = L.Text("CopyFailed"); }
     }
+    private void ResetOcr()
+    {
+        ocrEnabled = false;
+        ocrCancellation?.Cancel();
+        TextOverlay.SetText(null); ocrStatus = null;
+        TextOverlay.IsHitTestVisible = false;
+        OcrButton.IsEnabled = false;
+        UpdateOcrButton();
+    }
+    private void UpdateOcrButton()
+    {
+        OcrButton.Content = ocrEnabled ? "OCR ✓" : "OCR";
+        OcrButton.ToolTip = L.Text(ocrEnabled ? "OcrDisable" : "OcrEnable");
+        System.Windows.Automation.AutomationProperties.SetName(OcrButton, L.Text(ocrEnabled ? "OcrDisable" : "OcrEnable"));
+    }
+    private void OcrClick(object sender, RoutedEventArgs e)
+    {
+        if (document == null || document.Animated) return;
+        ocrEnabled = !ocrEnabled;
+        ocrCancellation?.Cancel();
+        TextOverlay.SetText(null); ocrStatus = null;
+        TextOverlay.IsHitTestVisible = ocrEnabled;
+        UpdateOcrButton(); UpdateScale();
+        if (ocrEnabled) QueueRecognition(document);
+    }
     private void QueueRecognition(ImageDocument image)
     {
         Dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(() => {
-            if (!closed && ReferenceEquals(document, image)) _ = RecognizeTextAsync(image);
+            if (!closed && ocrEnabled && ReferenceEquals(document, image)) _ = RecognizeTextAsync(image);
         }));
     }
     private async Task RecognizeTextAsync(ImageDocument image)
@@ -303,7 +344,7 @@ public partial class MainWindow : Window
         try
         {
             var recognized = await ocr.RecognizeAsync(image.Frames[0].Bitmap, L.Language, cancellation.Token);
-            if (closed || cancellation.IsCancellationRequested || !ReferenceEquals(document, image)) return;
+            if (closed || !ocrEnabled || cancellation.IsCancellationRequested || !ReferenceEquals(document, image)) return;
             TextOverlay.SetText(recognized); ocrStatus = recognized.Words.Count > 0 ? "TextAvailable" : "NoText";
             UpdateScale();
         }
@@ -317,11 +358,13 @@ public partial class MainWindow : Window
     private void LanguageChanged()
     {
         if (closed) return;
+        UpdateOcrButton();
         UpdateScale();
         if (document == null) { Message.Text = L.Text("Empty"); Status.Text = L.Text("Description"); }
-        else if (!document.Animated) { ocrCancellation?.Cancel(); TextOverlay.SetText(null); QueueRecognition(document); }
+        else if (ocrEnabled && !document.Animated) { ocrCancellation?.Cancel(); TextOverlay.SetText(null); QueueRecognition(document); }
     }
     private static string FriendlyError(Exception error) => error switch {
+        OutOfMemoryException or InsufficientMemoryException => L.Text("MemoryUnavailable"),
         FileNotFoundException or DirectoryNotFoundException => L.Text("FileMissing"),
         UnauthorizedAccessException => L.Text("AccessDenied"),
         InvalidDataException => error.Message,

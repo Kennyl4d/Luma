@@ -1,4 +1,4 @@
-Luma 0.3.4 — en
+Luma 0.3.5 — en
 Author: KENNY
 A fast, minimal image viewer for Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -12,9 +12,10 @@ Actual size (1)
 Rotate view (R)
 Fullscreen (F11)
 Text recognition runs locally. Images are not sent online.
-Drag over detected words to select text. Copy with Ctrl+C or the context menu. Drag outside text to pan; hold Shift to pan over text. Recognition uses the system language and English.
+Text recognition is off by default for each image. Click OCR to enable it, then select text and copy with Ctrl+C. Click OCR again to return to dragging the image. Animated GIFs do not support OCR.
+Check for updates
 
-Luma 0.3.4 — it
+Luma 0.3.5 — it
 Autore: KENNY
 Un visualizzatore immagini rapido ed essenziale per Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -28,9 +29,10 @@ Dimensioni originali (1)
 Ruota vista (R)
 Schermo intero (F11)
 Il riconoscimento del testo avviene sul PC. Le immagini non vengono inviate in rete.
-Trascina sulle parole rilevate per selezionare il testo. Copia con Ctrl+C o dal menu contestuale. Trascina fuori dal testo per spostare la foto; tieni premuto Maiusc per spostarla anche sul testo. Il riconoscimento usa la lingua di sistema e l’inglese.
+Il riconoscimento testo è disattivato inizialmente per ogni immagine. Premi OCR per attivarlo, poi seleziona il testo e copialo con Ctrl+C. Premi nuovamente OCR per tornare a trascinare l’immagine. L’OCR non è disponibile per le GIF animate.
+Verifica aggiornamenti
 
-Luma 0.3.4 — ru
+Luma 0.3.5 — ru
 Автор: KENNY
 Быстрый и простой просмотр изображений для Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -44,9 +46,10 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 Повернуть изображение (R)
 Полный экран (F11)
 Текст распознаётся на компьютере. Изображения не отправляются в интернет.
-Перетащите указатель по словам, чтобы выделить текст. Копируйте через Ctrl+C или контекстное меню. Для перемещения фото тяните вне текста или удерживайте Shift. Распознавание использует язык системы и английский.
+Распознавание текста по умолчанию выключено для каждого изображения. Нажмите OCR, выделите текст и скопируйте его с помощью Ctrl+C. Нажмите OCR ещё раз, чтобы снова перетаскивать изображение. Анимированные GIF не поддерживают OCR.
+Проверить обновления
 
-Luma 0.3.4 — de
+Luma 0.3.5 — de
 Autor: KENNY
 Ein schneller, einfacher Bildbetrachter für Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -60,9 +63,10 @@ Originalgröße (1)
 Ansicht drehen (R)
 Vollbild (F11)
 Die Texterkennung erfolgt lokal. Bilder werden nicht ins Internet gesendet.
-Ziehe über erkannte Wörter, um Text auszuwählen. Kopiere mit Strg+C oder dem Kontextmenü. Ziehe außerhalb des Textes, um das Foto zu verschieben, oder halte die Umschalttaste gedrückt. Erkennung in Systemsprache und Englisch.
+Die Texterkennung ist für jedes Bild zunächst deaktiviert. Klicken Sie auf OCR, wählen Sie Text aus und kopieren Sie ihn mit Strg+C. Klicken Sie erneut auf OCR, um das Bild wieder zu verschieben. Animierte GIFs unterstützen kein OCR.
+Nach Updates suchen
 
-Luma 0.3.4 — fr
+Luma 0.3.5 — fr
 Auteur: KENNY
 Une visionneuse d’images rapide et simple pour Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -76,9 +80,10 @@ Taille réelle (1)
 Faire pivoter la vue (R)
 Plein écran (F11)
 Le texte est reconnu sur votre ordinateur. Les images ne sont pas envoyées en ligne.
-Faites glisser sur les mots détectés pour sélectionner le texte. Copiez avec Ctrl+C ou le menu contextuel. Faites glisser hors du texte pour déplacer la photo, ou maintenez Maj. Reconnaissance dans la langue du système et en anglais.
+La reconnaissance de texte est désactivée par défaut pour chaque image. Cliquez sur OCR pour l’activer, sélectionnez le texte et copiez-le avec Ctrl+C. Cliquez à nouveau sur OCR pour déplacer l’image. Les GIF animés ne prennent pas en charge l’OCR.
+Rechercher des mises à jour
 
-Luma 0.3.4 — es
+Luma 0.3.5 — es
 Autor: KENNY
 Un visor de imágenes rápido y sencillo para Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -92,9 +97,10 @@ Tamaño real (1)
 Girar vista (R)
 Pantalla completa (F11)
 El texto se reconoce en el equipo. Las imágenes no se envían a internet.
-Arrastra sobre las palabras detectadas para seleccionar texto. Copia con Ctrl+C o el menú contextual. Arrastra fuera del texto para mover la foto, o mantén Mayús. Se usan el idioma del sistema y el inglés.
+El reconocimiento de texto está desactivado inicialmente para cada imagen. Pulsa OCR para activarlo, selecciona el texto y cópialo con Ctrl+C. Pulsa OCR de nuevo para volver a arrastrar la imagen. Los GIF animados no admiten OCR.
+Buscar actualizaciones
 
-Luma 0.3.4 — pt-BR
+Luma 0.3.5 — pt-BR
 Autor: KENNY
 Um visualizador de imagens rápido e simples para Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -108,9 +114,10 @@ Tamanho real (1)
 Girar visualização (R)
 Tela cheia (F11)
 O texto é reconhecido no computador. As imagens não são enviadas à internet.
-Arraste sobre as palavras detectadas para selecionar texto. Copie com Ctrl+C ou pelo menu de contexto. Arraste fora do texto para mover a foto ou mantenha Shift pressionado. São usados o idioma do sistema e o inglês.
+O reconhecimento de texto começa desativado para cada imagem. Clique em OCR para ativá-lo, selecione o texto e copie com Ctrl+C. Clique em OCR novamente para voltar a arrastar a imagem. GIFs animados não oferecem suporte a OCR.
+Verificar atualizações
 
-Luma 0.3.4 — cs
+Luma 0.3.5 — cs
 Autor: KENNY
 Rychlý a jednoduchý prohlížeč obrázků pro Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -124,9 +131,10 @@ Skutečná velikost (1)
 Otočit zobrazení (R)
 Celá obrazovka (F11)
 Rozpoznávání textu probíhá v počítači. Obrázky se neposílají na internet.
-Tažením přes rozpoznaná slova vyberete text. Kopírujte pomocí Ctrl+C nebo místní nabídky. Tažením mimo text posunete fotografii; nad textem podržte Shift. Používá se jazyk systému a angličtina.
+Rozpoznávání textu je pro každý obrázek ve výchozím stavu vypnuté. Zapněte je tlačítkem OCR, vyberte text a zkopírujte jej pomocí Ctrl+C. Dalším kliknutím na OCR obnovíte přetahování obrázku. Animované GIFy OCR nepodporují.
+Vyhledat aktualizace
 
-Luma 0.3.4 — pl
+Luma 0.3.5 — pl
 Autor: KENNY
 Szybka i prosta przeglądarka obrazów dla Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -140,9 +148,10 @@ Rzeczywisty rozmiar (1)
 Obróć widok (R)
 Pełny ekran (F11)
 Tekst jest rozpoznawany lokalnie. Obrazy nie są wysyłane do internetu.
-Przeciągnij po wykrytych słowach, aby zaznaczyć tekst. Kopiuj przez Ctrl+C lub menu kontekstowe. Przeciągnij poza tekstem, aby przesunąć zdjęcie, lub przytrzymaj Shift. Używany jest język systemu i angielski.
+Rozpoznawanie tekstu jest domyślnie wyłączone dla każdego obrazu. Kliknij OCR, zaznacz tekst i skopiuj go za pomocą Ctrl+C. Kliknij OCR ponownie, aby wrócić do przesuwania obrazu. Animowane GIF-y nie obsługują OCR.
+Sprawdź aktualizacje
 
-Luma 0.3.4 — tr
+Luma 0.3.5 — tr
 Yazar: KENNY
 Windows için hızlı ve sade bir görüntü görüntüleyici.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -156,9 +165,10 @@ Gerçek boyut (1)
 Görünümü döndür (R)
 Tam ekran (F11)
 Metin bilgisayarda tanınır. Görüntüler internete gönderilmez.
-Metni seçmek için tanınan sözcüklerin üzerinde sürükleyin. Ctrl+C veya bağlam menüsüyle kopyalayın. Fotoğrafı taşımak için metin dışında sürükleyin ya da Shift tuşunu basılı tutun. Sistem dili ve İngilizce kullanılır.
+Metin tanıma her görüntü için başlangıçta kapalıdır. Etkinleştirmek için OCR’ye tıklayın, metni seçin ve Ctrl+C ile kopyalayın. Görüntüyü yeniden sürüklemek için OCR’ye tekrar tıklayın. Animasyonlu GIF’ler OCR’yi desteklemez.
+Güncellemeleri denetle
 
-Luma 0.3.4 — ja
+Luma 0.3.5 — ja
 作者: KENNY
 Windows用の高速でシンプルな画像ビューアー。
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -172,9 +182,10 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 表示を回転 (R)
 全画面表示 (F11)
 文字認識はこのPCで行われます。画像はインターネットに送信されません。
-認識された単語をドラッグしてテキストを選択します。Ctrl+Cまたは右クリックメニューでコピーできます。写真を動かすには文字以外の部分をドラッグするか、Shiftを押してください。認識にはシステムの言語と英語を使用します。
+文字認識は画像ごとに初期状態では無効です。OCR をクリックして有効にし、文字を選択して Ctrl+C でコピーします。再度 OCR をクリックすると画像のドラッグに戻ります。アニメーション GIF は OCR に対応していません。
+更新を確認
 
-Luma 0.3.4 — ko
+Luma 0.3.5 — ko
 제작자: KENNY
 Windows용 빠르고 간단한 이미지 뷰어입니다.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -188,9 +199,10 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 보기 회전 (R)
 전체 화면 (F11)
 문자 인식은 이 PC에서 수행됩니다. 이미지는 인터넷으로 전송되지 않습니다.
-감지된 단어 위를 끌어 텍스트를 선택하세요. Ctrl+C 또는 우클릭 메뉴로 복사합니다. 사진을 이동하려면 텍스트 밖을 끌거나 Shift를 누르세요. 시스템 언어와 영어로 인식합니다.
+텍스트 인식은 각 이미지에서 기본적으로 꺼져 있습니다. OCR을 눌러 켠 다음 텍스트를 선택하고 Ctrl+C로 복사하세요. OCR을 다시 누르면 이미지를 드래그할 수 있습니다. 애니메이션 GIF는 OCR을 지원하지 않습니다.
+업데이트 확인
 
-Luma 0.3.4 — zh-Hans
+Luma 0.3.5 — zh-Hans
 作者: KENNY
 适用于 Windows 的快速、简洁图片查看器。
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -204,9 +216,10 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 旋转视图 (R)
 全屏 (F11)
 文字识别在本机进行。图片不会上传到网络。
-在识别出的文字上拖动即可选择。按 Ctrl+C 或使用右键菜单复制。在文字以外拖动可移动图片，也可按住 Shift。识别使用系统语言和英语。
+每张图像默认关闭文字识别。点击 OCR 启用后，可选择文字并按 Ctrl+C 复制。再次点击 OCR 即可恢复拖动图像。GIF 动画不支持 OCR。
+检查更新
 
-Luma 0.3.4 — zh-Hant
+Luma 0.3.5 — zh-Hant
 作者: KENNY
 適用於 Windows 的快速、簡潔圖片檢視器。
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -220,5 +233,6 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 旋轉檢視 (R)
 全螢幕 (F11)
 文字辨識在本機進行。圖片不會上傳至網路。
-在辨識出的文字上拖曳即可選取。按 Ctrl+C 或使用右鍵選單複製。在文字以外拖曳可移動圖片，也可按住 Shift。辨識使用系統語言及英語。
+每張影像預設關閉文字辨識。點擊 OCR 啟用後，可選取文字並按 Ctrl+C 複製。再次點擊 OCR 即可恢復拖曳影像。GIF 動畫不支援 OCR。
+檢查更新
 

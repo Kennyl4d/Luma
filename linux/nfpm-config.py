@@ -26,8 +26,8 @@ for path in (root/'licenses').glob('*'):
 dirs.update(['/usr/share/doc/luma','/usr/share/doc/luma/licenses'])
 contents += [{'dst':path,'type':'dir','file_info':{'mode':0o755,'owner':'root','group':'root'}} for path in sorted(dirs)]
 config={
- 'name':'luma','arch':'amd64','platform':'linux','version':'0.3.4','release':'1',
- 'maintainer':'KENNY','vendor':'KENNY','description':'Minimal image viewer with local text recognition\nLinux port of Luma 0.3.4. JPEG, PNG, animated GIF, HEIC/HEIF, WebP, AVIF, BMP/DIB, TIFF, ICO, SVG. Automatic localization in 14 languages.',
+ 'name':'luma','arch':'amd64','platform':'linux','version':'0.3.5','release':'1',
+ 'maintainer':'KENNY','vendor':'KENNY','description':'Minimal image viewer with local text recognition\nLinux port of Luma 0.3.5. JPEG, PNG, animated GIF, HEIC/HEIF, WebP, AVIF, BMP/DIB, TIFF, ICO, SVG. Automatic localization in 14 languages.',
  'license':'GPL-3.0-only','section':'graphics','priority':'optional',
  'contents':contents,
  'scripts':{'postinstall':str(root/'linux/packaging/refresh-desktop.sh'),'postremove':str(root/'linux/packaging/refresh-desktop.sh')},

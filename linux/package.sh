@@ -39,7 +39,7 @@ Requires: glibc >= 2.28, libgcc, libstdc++, fontconfig, libX11, libICE, libSM, g
 Requires: libtesseract.so.5()(64bit)
 Recommends: xorg-x11-server-Xwayland, xdg-desktop-portal
 %description
-Luma 0.3.4 Linux port. Image formats, animated GIF, zoom, fullscreen,
+Luma 0.3.5 Linux port. Image formats, animated GIF, zoom, fullscreen,
 rotation, 14 automatic languages, system theme and offline text selection.
 Author: KENNY.
 %global __os_install_post %{nil}

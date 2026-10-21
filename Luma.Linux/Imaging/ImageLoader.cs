@@ -15,7 +15,7 @@ public sealed record ImageDocument(IReadOnlyList<ImageFrame> Frames, uint Iterat
 public sealed class ImageLoader
 {
  private readonly SemaphoreSlim gate=new(1);
- private static readonly Lazy<bool> configuration = new(() => { MagickNET.Initialize(Path.Combine(AppContext.BaseDirectory,"DecoderConfig")); ResourceLimits.Memory=192UL*1024*1024; ResourceLimits.MaxMemoryRequest=192UL*1024*1024; ResourceLimits.ListLength=1000; ResourceLimits.Disk=0; ResourceLimits.Thread=2; return true; });
+ private static readonly Lazy<bool> configuration = new(() => { MagickNET.Initialize(Path.Combine(AppContext.BaseDirectory,"DecoderConfig")); ResourceLimits.Memory=long.MaxValue; ResourceLimits.Area=long.MaxValue; ResourceLimits.MaxMemoryRequest=long.MaxValue; ResourceLimits.ListLength=1000; ResourceLimits.Disk=0; ResourceLimits.Thread=2; return true; });
  public async Task<ImageDocument> LoadAsync(string path,CancellationToken token)
  {
   await gate.WaitAsync(token);
@@ -24,7 +24,6 @@ public sealed class ImageLoader
  private static ImageDocument Load(string path,CancellationToken token)
  {
   token.ThrowIfCancellationRequested();
-  if(new FileInfo(path).Length>128L*1024*1024) throw new InvalidDataException(L.Text("FileTooLarge"));
   _=configuration.Value;
   string extension=Path.GetExtension(path).ToLowerInvariant();
   using(var input=File.OpenRead(path)) { Span<byte> h=stackalloc byte[8]; int n=input.ReadAtLeast(h,h.Length,throwOnEndOfStream:false); if(n>=3&&h[0]==255&&h[1]==216&&h[2]==255) extension=".jpg"; else if(n==8&&h.SequenceEqual(new byte[]{137,80,78,71,13,10,26,10})) extension=".png"; else if(n>=6&&(h[..6].SequenceEqual("GIF87a"u8)||h[..6].SequenceEqual("GIF89a"u8))) extension=".gif"; else if(n>=2&&h[0]==66&&h[1]==77) extension=".bmp"; }
@@ -57,5 +56,5 @@ public sealed class ImageLoader
    return new(frames,iterations);
   } catch { foreach(var frame in frames) frame.Bitmap.Dispose(); throw; }
  }
- private static void CheckSize(uint width,uint height) { if(width==0||height==0||(long)width*height>40_000_000) throw new InvalidDataException(L.Text("ImageTooLarge")); }
+ private static void CheckSize(uint width,uint height) { if(width==0||height==0) throw new InvalidDataException(L.Text("CorruptFormat")); }
 }

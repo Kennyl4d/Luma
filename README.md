@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/tag/v0.3.4"><img alt="Download for Windows and Linux" src="https://img.shields.io/badge/Download-Windows%20%26%20Linux-0078D4?style=flat-square"></a>
+  <a href="../../releases/tag/v0.3.5"><img alt="Download for Windows and Linux" src="https://img.shields.io/badge/Download-Windows%20%26%20Linux-0078D4?style=flat-square"></a>
   <a href="../../actions/workflows/windows.yml"><img alt="Windows build" src="https://img.shields.io/github/actions/workflow/status/Kennyl4d/Luma/windows.yml?branch=main&label=Windows%20build&style=flat-square"></a>
   <a href="LICENSE"><img alt="License: GPL v3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square"></a>
 </p>
@@ -38,12 +38,14 @@ Download installers and packages from the [Releases page](../../releases).
 
 - Minimal interface with light, dark, and system themes.
 - Previous and next image navigation.
-- Zoom, fit to window, and actual-size viewing.
+- Pointer-centered mouse-wheel zoom, fit to window, and actual-size viewing.
+- No fixed 128 MiB file-size or 40-megapixel still-image limit; available memory and decoder capabilities apply.
 - Fullscreen mode.
 - Image rotation without modifying the original file.
 - Animated GIF playback.
 - Automatic interface language selection.
-- Offline text recognition with text selection and copying directly from images.
+- Optional offline text recognition, enabled with the OCR button for the current image.
+- Manual update checks from the About window, with a link to the latest public GitHub release.
 - File associations for opening images with Luma.
 - Application information and a custom icon.
 
@@ -78,19 +80,19 @@ Download the package for your distribution. Open a terminal in the folder contai
 **Debian / Ubuntu**
 
 ```sh
-sudo apt install ./luma_0.3.4-1_amd64.deb
+sudo apt install ./luma_0.3.5-1_amd64.deb
 ```
 
 **Fedora**
 
 ```sh
-sudo dnf install ./luma-0.3.4-1.x86_64.rpm
+sudo dnf install ./luma-0.3.5-1.x86_64.rpm
 ```
 
 **Arch Linux**
 
 ```sh
-sudo pacman -U ./luma-0.3.4-1-x86_64.pkg.tar.zst
+sudo pacman -U ./luma-0.3.5-1-x86_64.pkg.tar.zst
 ```
 
 Linux packages target modern glibc-based x86_64 systems. On Wayland desktops, Luma currently uses XWayland.
@@ -101,9 +103,17 @@ To update Luma, download a newer package from Releases and install it using the 
 
 Text recognition runs locally on your computer. Images are not uploaded to an online OCR service.
 
+OCR is off by default for each image. Click **OCR** in the toolbar to enable recognition, or click it again to clear recognized text and return to dragging the image.
+
 Recognized words can be selected directly on the image and copied with **Ctrl+C** or the context menu. Hold **Shift** to pan the image over recognized text.
 
 Text recognition is not available for animated GIFs.
+
+## Check for updates
+
+Open **About Luma** (ⓘ) and choose **Check for updates**. Luma checks the latest stable public release in `Kennyl4d/Luma` on GitHub. If a newer version is available, **Open release page** opens your browser so you can download the package for Windows or Linux. Updates are installed manually.
+
+The check runs only when requested, requires an internet connection, and sends no images. An inaccessible repository or missing public release is reported separately from connection failures.
 
 ## Source code and builds
 

@@ -16,6 +16,7 @@
           <Button Content="100%" ToolTip="{DynamicResource L.ActualTip}" Click="ActualClick"/>
           <Button Content="↻" FontSize="20" ToolTip="{DynamicResource L.RotateTip}" Click="RotateClick"/>
           <Button Content="⛶" FontSize="20" ToolTip="{DynamicResource L.FullscreenTip}" Click="FullscreenClick"/>
+          <Button x:Name="OcrButton" Content="OCR" ToolTip="{DynamicResource L.OcrEnable}" Click="OcrClick" IsEnabled="False"/>
           <Button x:Name="ThemeButton" Content="{DynamicResource L.Theme}" ToolTip="{DynamicResource L.ThemeTip}" Click="ThemeClick">
             <Button.ContextMenu>
               <ContextMenu>
@@ -39,7 +40,7 @@
           <MenuItem Header="{DynamicResource L.CopyAll}" Click="CopyAllTextClick"/>
         </ContextMenu></Grid.ContextMenu>
         <Image x:Name="Picture" Stretch="Fill" RenderOptions.BitmapScalingMode="HighQuality"/>
-        <ocr:TextSelectionOverlay x:Name="TextOverlay"/>
+        <ocr:TextSelectionOverlay x:Name="TextOverlay" IsHitTestVisible="False"/>
       </Grid>
     </ScrollViewer>
     <TextBlock x:Name="Message" Grid.Row="1" Text="{DynamicResource L.Empty}" Foreground="{DynamicResource MutedBrush}"

@@ -1,3 +1,9 @@
+# Versione 0.3.5 - 21 ottobre 2026
+
+Compilazione e pubblicazione self-contained Windows x64 e Linux x64 riuscite. Zoom al puntatore, OCR manuale disattivato per ogni nuova immagine, verifica aggiornamenti da Informazioni, rimozione dei limiti 128 MiB e 40 MP. Tutti i nuovi messaggi sono tradotti nelle 14 lingue. Verifiche e limiti dei test: docs/CHANGES-0.3.5.md.
+
+Le note seguenti documentano le versioni precedenti.
+
 # Stato della consegna — 14 ottobre 2026
 
 Versione 0.3.4: compatibilità prevista Windows 10 x64 dalla versione 1607 (build 14393), oltre a Windows 11. Abbassata la condizione di avvio MSI da build 22000 a 14393 e aggiornati i messaggi in tutte le 14 lingue. Decorazioni DWM isolate in WindowAppearance: barra scura da build 17763 con fallback attributo 19 quando 20 non disponibile; angoli arrotondati richiesti solo da build 22000. Manifest con DPI PerMonitorV2 e fallback true/pm per Windows 10 precedenti a 1703. WPF/.NET 10, runtime autonomo e dipendenze x64 conservati. Nessun test né installazione su Windows 10 eseguiti in questa sessione; non certificata compatibilità reale su tutte le build/edizioni.

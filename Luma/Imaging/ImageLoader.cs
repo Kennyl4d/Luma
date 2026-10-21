@@ -10,7 +10,6 @@ namespace Luma.Imaging;
 public sealed class ImageLoader
 {
     private readonly SemaphoreSlim gate = new(1);
-    private const long MaxPixels = 40_000_000;
     private const long MaxAnimationPixels = 24_000_000;
     private static readonly Lazy<string> nativeConfiguration = new(InitializeNative);
 
@@ -31,8 +30,6 @@ public sealed class ImageLoader
             return await Task.Run(() =>
             {
                 token.ThrowIfCancellationRequested();
-                if (new FileInfo(path).Length > 128 * 1024 * 1024)
-                    throw new InvalidDataException(L.Text("FileTooLarge"));
                 var extension = DetectFormat(path);
                 var result = extension switch
                 {
@@ -105,8 +102,8 @@ public sealed class ImageLoader
 
     private static void CheckSize(int width, int height)
     {
-        if (width <= 0 || height <= 0 || (long)width * height > MaxPixels)
-            throw new InvalidDataException(L.Text("ImageTooLarge"));
+        if (width <= 0 || height <= 0)
+            throw new InvalidDataException(L.Text("CorruptFormat"));
     }
 
     // Keep the native library outside the JPEG/PNG startup path.
@@ -114,8 +111,10 @@ public sealed class ImageLoader
     private static ImageDocument LoadNative(string path, string extension, CancellationToken token)
     {
         _ = nativeConfiguration.Value;
-        ResourceLimits.Memory = 192UL * 1024 * 1024;
-        ResourceLimits.MaxMemoryRequest = 192UL * 1024 * 1024;
+        // Let available memory and decoder capabilities determine still-image size.
+        ResourceLimits.Memory = long.MaxValue;
+        ResourceLimits.Area = long.MaxValue;
+        ResourceLimits.MaxMemoryRequest = long.MaxValue;
         ResourceLimits.ListLength = 1000;
         ResourceLimits.Disk = 0;
         ResourceLimits.Thread = 2;
@@ -144,8 +143,7 @@ public sealed class ImageLoader
             canvasWidth = Math.Max(canvasWidth, width);
             canvasHeight = Math.Max(canvasHeight, height);
         }
-        long animationPixels = checked(canvasWidth * canvasHeight * images.Count);
-        if (animated && (images.Count > 1000 || animationPixels > MaxAnimationPixels))
+        if (animated && (images.Count > 1000 || checked(canvasWidth * canvasHeight * images.Count) > MaxAnimationPixels))
             throw new InvalidDataException(L.Text("GifTooLarge"));
         token.ThrowIfCancellationRequested();
         if (svg == null) images.Read(path, settings); else images.Read(svg, settings);
