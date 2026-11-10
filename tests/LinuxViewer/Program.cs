@@ -9,6 +9,7 @@ using Avalonia.Platform;
 using Avalonia.Threading;
 using Luma;
 using Luma.Ocr;
+using SkiaSharp;
 
 internal static class Program
 {
@@ -24,8 +25,38 @@ internal static class Program
         try { AppBuilder.Configure<App>().UseHeadless(new AvaloniaHeadlessPlatformOptions()).SetupWithoutStarting();Run();return 0; }
         catch(Exception e){Console.Error.WriteLine(e);return 1;}
     }
+    static void CheckOfflineOcr()
+    {
+        const string expected = "INGRESSO PRINCIPALE";
+        string path = Path.Combine(Path.GetTempPath(), $"luma-ocr-{Guid.NewGuid()}.png");
+        try
+        {
+            using var bitmap = new SKBitmap(800, 600);
+            using var canvas = new SKCanvas(bitmap);
+            using var typeface = SKTypeface.FromFamilyName("DejaVu Sans");
+            using var font = new SKFont(typeface, 30);
+            using var paint = new SKPaint { Color = SKColors.Black, IsAntialias = true };
+            canvas.Clear(SKColors.White);
+            canvas.RotateDegrees(-24, 400, 300);
+            canvas.DrawText(expected, 400, 300, SKTextAlign.Center, font, paint);
+            using (var stream = File.Create(path))
+                bitmap.Encode(stream, SKEncodedImageFormat.Png, 100);
+
+            var load = new Luma.Imaging.ImageLoader().LoadAsync(path, CancellationToken.None);
+            while (!load.IsCompleted) Pump();
+            using var image = load.GetAwaiter().GetResult();
+            var recognize = new OcrService().RecognizeAsync(image.Frames[0], "it", CancellationToken.None);
+            while (!recognize.IsCompleted) Pump();
+            var overlay = new TextSelectionOverlay();
+            overlay.SetText(recognize.GetAwaiter().GetResult());
+            Check(overlay.SelectedText(all: true) == expected, "Offline OCR recognizes tilted text");
+        }
+        finally { File.Delete(path); }
+    }
+
     static void Run()
     {
+        CheckOfflineOcr();
         var window=new MainWindow();window.Show();Pump();
         string path=LargeImageFixture.Create(2400,1800);
         try

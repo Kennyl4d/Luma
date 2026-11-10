@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/tag/v0.3.5"><img alt="Download for Windows and Linux" src="https://img.shields.io/badge/Download-Windows%20%26%20Linux-0078D4?style=flat-square"></a>
+  <a href="../../releases/latest"><img alt="Download for Windows and Linux" src="https://img.shields.io/badge/Download-Windows%20%26%20Linux-0078D4?style=flat-square"></a>
   <a href="../../actions/workflows/windows.yml"><img alt="Windows build" src="https://img.shields.io/github/actions/workflow/status/Kennyl4d/Luma/windows.yml?branch=main&label=Windows%20build&style=flat-square"></a>
   <a href="LICENSE"><img alt="License: GPL v3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square"></a>
 </p>
@@ -80,19 +80,19 @@ Download the package for your distribution. Open a terminal in the folder contai
 **Debian / Ubuntu**
 
 ```sh
-sudo apt install ./luma_0.3.5-1_amd64.deb
+sudo apt install ./luma_0.3.6-1_amd64.deb
 ```
 
 **Fedora**
 
 ```sh
-sudo dnf install ./luma-0.3.5-1.x86_64.rpm
+sudo dnf install ./luma-0.3.6-1.x86_64.rpm
 ```
 
 **Arch Linux**
 
 ```sh
-sudo pacman -U ./luma-0.3.5-1-x86_64.pkg.tar.zst
+sudo pacman -U ./luma-0.3.6-1-x86_64.pkg.tar.zst
 ```
 
 Linux packages target modern glibc-based x86_64 systems. On Wayland desktops, Luma currently uses XWayland.
