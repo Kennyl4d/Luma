@@ -41,7 +41,7 @@ New-ItemProperty 'HKCU:\Software\RegisteredApplications' -Name Luma -Value 'Soft
 $uninstall = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Luma'
 New-Item $uninstall -Force | Out-Null
 New-ItemProperty $uninstall -Name DisplayName -Value Luma -Force | Out-Null
-New-ItemProperty $uninstall -Name DisplayVersion -Value '0.3.5' -Force | Out-Null
+New-ItemProperty $uninstall -Name DisplayVersion -Value '0.3.6' -Force | Out-Null
 New-ItemProperty $uninstall -Name InstallLocation -Value $Destination -Force | Out-Null
 New-ItemProperty $uninstall -Name UninstallString -Value ('powershell.exe -NoProfile -ExecutionPolicy Bypass -File "' + (Join-Path $Destination 'Uninstall.ps1') + '"') -Force | Out-Null
 $shell = New-Object -ComObject WScript.Shell

@@ -16,7 +16,7 @@ Maintainer: KENNY
 Section: graphics
 Priority: optional
 Installed-Size: $size
-Depends: libc6 (>= 2.28), libgcc-s1, libstdc++6, libfontconfig1, libx11-6, libice6, libsm6, libgtk-3-0 | libgtk-3-0t64, libtesseract5, libssl3 | libssl3t64, libicu72 | libicu74 | libicu76 | libicu77 | libicu78 | libicu70
+Depends: libc6 (>= 2.28), libgcc-s1, libstdc++6, libfontconfig1, libx11-6, libice6, libsm6, libgtk-3-0 | libgtk-3-0t64, libssl3 | libssl3t64, libicu72 | libicu74 | libicu76 | libicu77 | libicu78 | libicu70
 Recommends: xwayland, xdg-desktop-portal, xdg-desktop-portal-gtk | xdg-desktop-portal-kde, desktop-file-utils, shared-mime-info
 Description: Minimal image viewer with local text recognition
  JPEG, PNG, animated GIF, HEIC/HEIF, WebP, AVIF, BMP/DIB, TIFF, ICO, SVG.
@@ -36,10 +36,9 @@ License: GPL-3.0-only
 BuildArch: x86_64
 AutoReqProv: no
 Requires: glibc >= 2.28, libgcc, libstdc++, fontconfig, libX11, libICE, libSM, gtk3, openssl-libs, libicu
-Requires: libtesseract.so.5()(64bit)
 Recommends: xorg-x11-server-Xwayland, xdg-desktop-portal
 %description
-Luma 0.3.5 Linux port. Image formats, animated GIF, zoom, fullscreen,
+Luma 0.3.6 Linux port. Image formats, animated GIF, zoom, fullscreen,
 rotation, 14 automatic languages, system theme and offline text selection.
 Author: KENNY.
 %global __os_install_post %{nil}

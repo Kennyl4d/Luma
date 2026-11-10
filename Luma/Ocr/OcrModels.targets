@@ -1,0 +1,30 @@
+<Project>
+  <PropertyGroup>
+    <OcrModelCache>$(BaseIntermediateOutputPath)ocr-models</OcrModelCache>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.29.0" GeneratePathProperty="true" ExcludeAssets="build;buildTransitive" />
+    <PackageReference Include="RapidOcrNet" Version="4.2.0" ExcludeAssets="build;buildTransitive" />
+    <OcrModel Include="ch_PP-LCNet_x0_25_textline_ori_cls_mobile.onnx" Url="https://raw.githubusercontent.com/BobLd/RapidOcrNet/7b5c432e4262470b6d81bf1710c3bd52fc438566/RapidOcrNet/models/v5/ch_PP-LCNet_x0_25_textline_ori_cls_mobile.onnx" Sha256="54379AE5174D026780215FC748A7F31910DEE36818E63D49E17DC598ECC82DF7" />
+    <OcrModel Include="ch_PP-OCRv5_mobile_det.onnx" Url="https://raw.githubusercontent.com/BobLd/RapidOcrNet/7b5c432e4262470b6d81bf1710c3bd52fc438566/RapidOcrNet/models/v5/ch_PP-OCRv5_mobile_det.onnx" Sha256="4D97C44A20D30A81AAD087D6A396B08F786C4635742AFC391F6621F5C6AE78AE" />
+    <OcrModel Include="PP-OCRv6_det_small.onnx" Url="https://raw.githubusercontent.com/BobLd/RapidOcrNet/7b5c432e4262470b6d81bf1710c3bd52fc438566/RapidOcrNet/models/v6/PP-OCRv6_det_small.onnx" Sha256="090F04ABCD9D9A7498BC4EBF677E4CB9BDCE1FE4197DDB7E529F1EF44E1FF94F" />
+    <OcrModel Include="PP-OCRv6_rec_small.onnx" Url="https://raw.githubusercontent.com/BobLd/RapidOcrNet/7b5c432e4262470b6d81bf1710c3bd52fc438566/RapidOcrNet/models/v6/PP-OCRv6_rec_small.onnx" Sha256="6F327246B50388F3C176AE304BD95767EA6DC0C9AE92153EF8CBE210B3C14884" />
+    <OcrModel Include="ppocrv6_dict.txt" Url="https://raw.githubusercontent.com/BobLd/RapidOcrNet/7b5c432e4262470b6d81bf1710c3bd52fc438566/RapidOcrNet/models/v6/ppocrv6_dict.txt" Sha256="B5F2BFE2BDD9448429E3E82B51C789775D9B42F2403D082B00662EB77E401C5D" />
+    <!-- Mirror of the RapidOCR v3.10.0 models and dictionaries. Their SHA-256 values are unchanged. -->
+    <OcrModel Include="cyrillic_PP-OCRv5_rec_mobile.onnx" Url="https://raw.githubusercontent.com/403323726/PP-OCRv5/376ddfd95322d6fcf41b489abc3780ff53b235ee/rec/cyrillic_PP-OCRv5_rec_mobile.onnx" Sha256="90F761B4BFCCE0C8C561C0CB5C887B0971D3EC01C32164BDF7374A35B0982711" />
+    <OcrModel Include="ppocrv5_cyrillic_dict.txt" Url="https://raw.githubusercontent.com/403323726/PP-OCRv5/376ddfd95322d6fcf41b489abc3780ff53b235ee/dict/ppocrv5_cyrillic_dict.txt" Sha256="DB40AA52CEB112055BE80C694AFDF655D5D2C4F7873704524CC16A447CA913BA" />
+    <OcrModel Include="korean_PP-OCRv5_rec_mobile.onnx" Url="https://raw.githubusercontent.com/403323726/PP-OCRv5/376ddfd95322d6fcf41b489abc3780ff53b235ee/rec/korean_PP-OCRv5_rec_mobile.onnx" Sha256="CD6E2EA50F6943CA7271EB8C56A877A5A90720B7047FE9C41A2E541A25773C9B" />
+    <OcrModel Include="ppocrv5_korean_dict.txt" Url="https://raw.githubusercontent.com/403323726/PP-OCRv5/376ddfd95322d6fcf41b489abc3780ff53b235ee/dict/ppocrv5_korean_dict.txt" Sha256="A88071C68C01707489BAA79EBE0405B7BEB5CCA229F4FC94CC3EF992328802D7" />
+    <Content Include="$(PkgMicrosoft_ML_OnnxRuntime)/ThirdPartyNotices.txt"
+             Link="licenses/ONNX-Runtime-ThirdPartyNotices.txt"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="@(OcrModel->'$(OcrModelCache)/%(Identity)')"
+             Link="ocr-models/%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="PrepareOfflineOcrModels" BeforeTargets="PrepareForBuild">
+    <DownloadFile SourceUrl="%(OcrModel.Url)" DestinationFolder="$(OcrModelCache)"
+                  Condition="!Exists('$(OcrModelCache)/%(OcrModel.Identity)')" Retries="2" />
+    <VerifyFileHash File="$(OcrModelCache)/%(OcrModel.Identity)" Hash="%(OcrModel.Sha256)" Algorithm="SHA256" />
+  </Target>
+</Project>

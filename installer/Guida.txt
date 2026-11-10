@@ -1,4 +1,4 @@
-Luma 0.3.5 — en
+Luma 0.3.6 — en
 Author: KENNY
 A fast, minimal image viewer for Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -15,7 +15,7 @@ Text recognition runs locally. Images are not sent online.
 Text recognition is off by default for each image. Click OCR to enable it, then select text and copy with Ctrl+C. Click OCR again to return to dragging the image. Animated GIFs do not support OCR.
 Check for updates
 
-Luma 0.3.5 — it
+Luma 0.3.6 — it
 Autore: KENNY
 Un visualizzatore immagini rapido ed essenziale per Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -32,7 +32,7 @@ Il riconoscimento del testo avviene sul PC. Le immagini non vengono inviate in r
 Il riconoscimento testo è disattivato inizialmente per ogni immagine. Premi OCR per attivarlo, poi seleziona il testo e copialo con Ctrl+C. Premi nuovamente OCR per tornare a trascinare l’immagine. L’OCR non è disponibile per le GIF animate.
 Verifica aggiornamenti
 
-Luma 0.3.5 — ru
+Luma 0.3.6 — ru
 Автор: KENNY
 Быстрый и простой просмотр изображений для Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -49,7 +49,7 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 Распознавание текста по умолчанию выключено для каждого изображения. Нажмите OCR, выделите текст и скопируйте его с помощью Ctrl+C. Нажмите OCR ещё раз, чтобы снова перетаскивать изображение. Анимированные GIF не поддерживают OCR.
 Проверить обновления
 
-Luma 0.3.5 — de
+Luma 0.3.6 — de
 Autor: KENNY
 Ein schneller, einfacher Bildbetrachter für Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -66,7 +66,7 @@ Die Texterkennung erfolgt lokal. Bilder werden nicht ins Internet gesendet.
 Die Texterkennung ist für jedes Bild zunächst deaktiviert. Klicken Sie auf OCR, wählen Sie Text aus und kopieren Sie ihn mit Strg+C. Klicken Sie erneut auf OCR, um das Bild wieder zu verschieben. Animierte GIFs unterstützen kein OCR.
 Nach Updates suchen
 
-Luma 0.3.5 — fr
+Luma 0.3.6 — fr
 Auteur: KENNY
 Une visionneuse d’images rapide et simple pour Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -83,7 +83,7 @@ Le texte est reconnu sur votre ordinateur. Les images ne sont pas envoyées en l
 La reconnaissance de texte est désactivée par défaut pour chaque image. Cliquez sur OCR pour l’activer, sélectionnez le texte et copiez-le avec Ctrl+C. Cliquez à nouveau sur OCR pour déplacer l’image. Les GIF animés ne prennent pas en charge l’OCR.
 Rechercher des mises à jour
 
-Luma 0.3.5 — es
+Luma 0.3.6 — es
 Autor: KENNY
 Un visor de imágenes rápido y sencillo para Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -100,7 +100,7 @@ El texto se reconoce en el equipo. Las imágenes no se envían a internet.
 El reconocimiento de texto está desactivado inicialmente para cada imagen. Pulsa OCR para activarlo, selecciona el texto y cópialo con Ctrl+C. Pulsa OCR de nuevo para volver a arrastrar la imagen. Los GIF animados no admiten OCR.
 Buscar actualizaciones
 
-Luma 0.3.5 — pt-BR
+Luma 0.3.6 — pt-BR
 Autor: KENNY
 Um visualizador de imagens rápido e simples para Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -117,7 +117,7 @@ O texto é reconhecido no computador. As imagens não são enviadas à internet.
 O reconhecimento de texto começa desativado para cada imagem. Clique em OCR para ativá-lo, selecione o texto e copie com Ctrl+C. Clique em OCR novamente para voltar a arrastar a imagem. GIFs animados não oferecem suporte a OCR.
 Verificar atualizações
 
-Luma 0.3.5 — cs
+Luma 0.3.6 — cs
 Autor: KENNY
 Rychlý a jednoduchý prohlížeč obrázků pro Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -134,7 +134,7 @@ Rozpoznávání textu probíhá v počítači. Obrázky se neposílají na inter
 Rozpoznávání textu je pro každý obrázek ve výchozím stavu vypnuté. Zapněte je tlačítkem OCR, vyberte text a zkopírujte jej pomocí Ctrl+C. Dalším kliknutím na OCR obnovíte přetahování obrázku. Animované GIFy OCR nepodporují.
 Vyhledat aktualizace
 
-Luma 0.3.5 — pl
+Luma 0.3.6 — pl
 Autor: KENNY
 Szybka i prosta przeglądarka obrazów dla Windows.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -151,7 +151,7 @@ Tekst jest rozpoznawany lokalnie. Obrazy nie są wysyłane do internetu.
 Rozpoznawanie tekstu jest domyślnie wyłączone dla każdego obrazu. Kliknij OCR, zaznacz tekst i skopiuj go za pomocą Ctrl+C. Kliknij OCR ponownie, aby wrócić do przesuwania obrazu. Animowane GIF-y nie obsługują OCR.
 Sprawdź aktualizacje
 
-Luma 0.3.5 — tr
+Luma 0.3.6 — tr
 Yazar: KENNY
 Windows için hızlı ve sade bir görüntü görüntüleyici.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -168,7 +168,7 @@ Metin bilgisayarda tanınır. Görüntüler internete gönderilmez.
 Metin tanıma her görüntü için başlangıçta kapalıdır. Etkinleştirmek için OCR’ye tıklayın, metni seçin ve Ctrl+C ile kopyalayın. Görüntüyü yeniden sürüklemek için OCR’ye tekrar tıklayın. Animasyonlu GIF’ler OCR’yi desteklemez.
 Güncellemeleri denetle
 
-Luma 0.3.5 — ja
+Luma 0.3.6 — ja
 作者: KENNY
 Windows用の高速でシンプルな画像ビューアー。
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -185,7 +185,7 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 文字認識は画像ごとに初期状態では無効です。OCR をクリックして有効にし、文字を選択して Ctrl+C でコピーします。再度 OCR をクリックすると画像のドラッグに戻ります。アニメーション GIF は OCR に対応していません。
 更新を確認
 
-Luma 0.3.5 — ko
+Luma 0.3.6 — ko
 제작자: KENNY
 Windows용 빠르고 간단한 이미지 뷰어입니다.
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -202,7 +202,7 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 텍스트 인식은 각 이미지에서 기본적으로 꺼져 있습니다. OCR을 눌러 켠 다음 텍스트를 선택하고 Ctrl+C로 복사하세요. OCR을 다시 누르면 이미지를 드래그할 수 있습니다. 애니메이션 GIF는 OCR을 지원하지 않습니다.
 업데이트 확인
 
-Luma 0.3.5 — zh-Hans
+Luma 0.3.6 — zh-Hans
 作者: KENNY
 适用于 Windows 的快速、简洁图片查看器。
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
@@ -219,7 +219,7 @@ JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG
 每张图像默认关闭文字识别。点击 OCR 启用后，可选择文字并按 Ctrl+C 复制。再次点击 OCR 即可恢复拖动图像。GIF 动画不支持 OCR。
 检查更新
 
-Luma 0.3.5 — zh-Hant
+Luma 0.3.6 — zh-Hant
 作者: KENNY
 適用於 Windows 的快速、簡潔圖片檢視器。
 JPEG · PNG · GIF · HEIC/HEIF · WebP · AVIF · BMP/DIB · TIFF · ICO · SVG

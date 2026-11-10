@@ -1,6 +1,6 @@
-# Luma 0.3.5 — port Linux
+# Luma 0.3.6 — port Linux
 
-Autore: KENNY. .NET 10 autonomo, Avalonia 12.1.4, Magick.NET 15.0.0, Tesseract C API 5 del sistema. Modelli OCR per le 14 lingue inclusi. Architettura Linux glibc x86_64/amd64. Il progetto Windows resta separato.
+Autore: KENNY. .NET 10 autonomo, Avalonia 12.1.4, Magick.NET 15.0.0, PaddleOCR con ONNX Runtime. I pacchetti includono i modelli per le 14 lingue supportate. Architettura Linux glibc x86_64/amd64. Il progetto Windows resta separato.
 
 ## Stato della consegna
 
@@ -19,14 +19,14 @@ La lingua segue LANGUAGE/LC_ALL/LC_MESSAGES/LANG, con inglese di fallback; cambi
 ## Installare
 
 ```sh
-sudo apt install ./luma_0.3.5-1_amd64.deb
-sudo dnf install ./luma-0.3.5-1.x86_64.rpm
-sudo pacman -U ./luma-0.3.5-1-x86_64.pkg.tar.zst
+sudo apt install ./luma_0.3.6-1_amd64.deb
+sudo dnf install ./luma-0.3.6-1.x86_64.rpm
+sudo pacman -U ./luma-0.3.6-1-x86_64.pkg.tar.zst
 ```
 
 Installazione /usr/lib/luma, launcher /usr/bin/luma, voce luma.desktop, icona e MIME inclusi. Selezionare Luma in «Apri con» per impostarla come predefinita: il pacchetto non sovrascrive le preferenze personali. Tema conservato alla disinstallazione.
 
-Il runtime .NET, Magick/codec, Skia, modelli OCR e configurazioni SVG sono inclusi. glibc/libstdc++, fontconfig/X11/GTK, ICU/OpenSSL e libtesseract.so.5 sono dipendenze dichiarate e gestite da apt/dnf/pacman. Obiettivi iniziali: Debian/Ubuntu, Fedora e Arch x86_64 moderni; non musl/Alpine o ARM64. Il formato .rpm non rende automaticamente il pacchetto compatibile con ogni versione di RHEL/openSUSE; valgono dipendenze e ABI del sistema.
+Il runtime .NET, Magick/codec, Skia, modelli OCR e configurazioni SVG sono inclusi. glibc/libstdc++, fontconfig/X11/GTK, ICU/OpenSSL sono dipendenze dichiarate e gestite da apt/dnf/pacman. Obiettivi iniziali: Debian/Ubuntu, Fedora e Arch x86_64 moderni; non musl/Alpine o ARM64. Il formato .rpm non rende automaticamente il pacchetto compatibile con ogni versione di RHEL/openSUSE; valgono dipendenze e ABI del sistema.
 
 ## Ricompilare
 

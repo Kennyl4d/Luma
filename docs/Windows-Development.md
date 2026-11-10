@@ -16,11 +16,11 @@ Il pulsante ⓘ apre la scheda Informazioni con versione, autore KENNY, formati,
 
 ## Testo selezionabile nelle foto
 
-Riconoscimento automatico locale dopo la visualizzazione iniziale, senza pulsante OCR e senza inviare immagini in rete. Passando sulle parole rilevate, il puntatore diventa una barra di selezione: trascinare per evidenziare parole consecutive e copiare con Ctrl+C oppure clic destro → Copia testo. Il menu offre anche Copia tutto il testo. Le evidenziazioni seguono zoom, scroll e rotazione della vista. Trascinando fuori dal testo si sposta la foto; tenendo premuto Maiusc si può spostarla anche sopra il testo.
+Premi OCR nella barra degli strumenti per riconoscere il testo nell’immagine corrente. Seleziona le parole e copiale con Ctrl+C. Le evidenziazioni seguono zoom, scorrimento e rotazione della vista.
 
-Tesseract con modelli fast inclusi per le 14 lingue: viene usata la lingua di sistema insieme all’inglese, senza caricare tutti i modelli in memoria. È una selezione per parole, non per singole lettere. Il riconoscimento viene eseguito su una copia con lato massimo 2200 pixel, una richiesta alla volta, con risultati superati ignorati. La chiamata nativa in corso non viene interrotta immediatamente. L’engine e i buffer temporanei sono rilasciati dopo l’analisi. Le GIF animate non vengono analizzate, per evitare evidenziazioni non corrispondenti ai fotogrammi. Testo molto piccolo, inclinato, scritto a mano, poco contrastato o in una lingua diversa da quelle in uso può non essere riconosciuto bene. Non è una replica completa di Live Text di iPhone.
+PaddleOCR usa PP-OCRv6 Small per rilevare il testo e riconoscere i caratteri latini, cinesi e giapponesi. Su immagini grandi senza risultati, Luma riprova con il rilevatore PP-OCRv5 per recuperare il testo piccolo. Se la lingua dell’app è il russo o il coreano, Luma usa il modello PP-OCRv5 dedicato, che riconosce anche l’inglese. L’analisi usa la CPU, conserva le coordinate dell’immagine originale e limita a 3200 pixel il lato più lungo della copia di lavoro.
 
-Per ricompilare: prima eseguire `scripts/Download-OcrModels.ps1` se i modelli non sono presenti. Le DLL del runtime C++ app-local sono in `Luma/NativeRuntime`, con licenza Microsoft inclusa: non è necessario un installer runtime separato.
+Alla prima compilazione, MSBuild scarica i modelli elencati in `Luma/Ocr/OcrModels.targets`, verifica i relativi SHA-256 e li include nella build. L’OCR usa solo questi file locali. Le DLL del runtime C++ app-local sono in `Luma/NativeRuntime`.
 
 MVP nativo Windows x64, C#/.NET 10 e WPF. Aprire `Luma.exe` dal pacchetto portabile oppure passargli un percorso: `Luma.exe "C:\Foto\immagine.heic"`.
 
