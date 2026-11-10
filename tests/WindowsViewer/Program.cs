@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,12 +22,40 @@ internal static class Program
     {
         try { Run();return 0; } catch(Exception e){Console.Error.WriteLine(e);return 1;}
     }
+    static void CheckOcr(string expected, int width, int height, double fontSize, double angle)
+    {
+        var visual = new DrawingVisual();
+        using (var drawing = visual.RenderOpen())
+        {
+            drawing.DrawRectangle(Brushes.White, null, new Rect(0, 0, width, height));
+            drawing.PushTransform(new RotateTransform(angle, width / 2d, height / 2d));
+            var text = new FormattedText(expected, CultureInfo.InvariantCulture, FlowDirection.LeftToRight,
+                new Typeface("Segoe UI"), fontSize, Brushes.Black, 1);
+            drawing.DrawText(text, new Point((width - text.Width) / 2, (height - text.Height) / 2));
+            drawing.Pop();
+        }
+        var bitmap = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
+        bitmap.Render(visual);
+        bitmap.Freeze();
+
+        var task = new OcrService().RecognizeAsync(bitmap, "it", CancellationToken.None);
+        while (!task.IsCompleted) Pump();
+        var result = task.GetAwaiter().GetResult();
+        var overlay = new TextSelectionOverlay();
+        overlay.SetText(result);
+        Check(overlay.SelectedText(all: true) == expected, $"Offline OCR recognizes {expected}");
+        Check(result.Words.Count == expected.Split(' ').Length && result.Words.All(word =>
+            new Rect(0, 0, width, height).Contains(word.Bounds)), "OCR returns one bounded selection per word");
+    }
+
     static void Run()
     {
         var app=new App { ShutdownMode=ShutdownMode.OnExplicitShutdown };
         app.InitializeComponent();
         SynchronizationContext.SetSynchronizationContext(new DispatcherSynchronizationContext(Dispatcher.CurrentDispatcher));
         L.Refresh();
+        CheckOcr("INGRESSO PRINCIPALE", 800, 600, 30, -24);
+        CheckOcr("Importo totale 49,90 euro", 3000, 1100, 15, 0);
         var window=new MainWindow(null){ShowInTaskbar=false,WindowStartupLocation=WindowStartupLocation.Manual,Left=-20000,Top=-20000};
         window.Show();Pump();
         // Use a generated image so no personal files enter regression tests.

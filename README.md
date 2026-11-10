@@ -101,7 +101,7 @@ To update Luma, download a newer package from Releases and install it using the 
 
 ## Text recognition and privacy
 
-Text recognition runs locally on your computer. Images are not uploaded to an online OCR service.
+Text recognition uses PaddleOCR and ONNX Runtime on your CPU. The models are bundled with Luma, so OCR works offline from the first use.
 
 OCR is off by default for each image. Click **OCR** in the toolbar to enable recognition, or click it again to clear recognized text and return to dragging the image.
 
@@ -124,7 +124,7 @@ The project uses:
 - **Windows:** C# / .NET and WPF.
 - **Linux:** C# / .NET and Avalonia.
 - **Image decoding:** Magick.NET / ImageMagick, alongside platform-specific decoding.
-- **Text recognition:** Tesseract OCR.
+- **Text recognition:** PaddleOCR via RapidOcrNet and ONNX Runtime.
 
 GitHub Actions workflows are provided for building Windows and Linux packages.
 

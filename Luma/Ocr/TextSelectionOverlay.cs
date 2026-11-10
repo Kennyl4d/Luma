@@ -57,15 +57,11 @@ public sealed class TextSelectionOverlay : FrameworkElement
         {
             var word = text.Words[i];
             if (result.Length > 0)
-            {
-                bool join = word.Line == previousLine && IsCjk(result[^1]) && IsCjk(word.Text[0]);
-                result.Append(word.Line != previousLine ? Environment.NewLine : join ? "" : " ");
-            }
+                result.Append(word.Line != previousLine ? Environment.NewLine : word.SeparatorBefore);
             result.Append(word.Text); previousLine = word.Line;
         }
         return result.ToString();
     }
-    private static bool IsCjk(char value) => value is >= '\u3000' and <= '\u9FFF' or >= '\uF900' and <= '\uFAFF';
     protected override void OnRender(DrawingContext drawing)
     {
         drawing.DrawRectangle(Brushes.Transparent, null, new Rect(0, 0, ActualWidth, ActualHeight));

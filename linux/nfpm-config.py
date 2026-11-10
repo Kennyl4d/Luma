@@ -32,9 +32,9 @@ config={
  'contents':contents,
  'scripts':{'postinstall':str(root/'linux/packaging/refresh-desktop.sh'),'postremove':str(root/'linux/packaging/refresh-desktop.sh')},
  'overrides':{
-  'deb':{'depends':['libc6 (>= 2.28)','libgcc-s1','libstdc++6','libfontconfig1','libx11-6','libice6','libsm6','libgtk-3-0 | libgtk-3-0t64','libtesseract5','libssl3 | libssl3t64','libicu70 | libicu72 | libicu74 | libicu76 | libicu77 | libicu78'],'recommends':['xwayland','xdg-desktop-portal','xdg-desktop-portal-gtk | xdg-desktop-portal-kde','desktop-file-utils','shared-mime-info']},
-  'rpm':{'depends':['glibc >= 2.28','libgcc','libstdc++','fontconfig','libX11','libICE','libSM','gtk3','openssl-libs','libicu','libtesseract.so.5()(64bit)'],'recommends':['xorg-x11-server-Xwayland','xdg-desktop-portal']},
-  'archlinux':{'depends':['glibc','gcc-libs','fontconfig','libx11','libice','libsm','gtk3','openssl','icu','tesseract'],'suggests':['xorg-xwayland','xdg-desktop-portal','xdg-desktop-portal-gtk','xdg-desktop-portal-kde']}
+  'deb':{'depends':['libc6 (>= 2.28)','libgcc-s1','libstdc++6','libfontconfig1','libx11-6','libice6','libsm6','libgtk-3-0 | libgtk-3-0t64','libssl3 | libssl3t64','libicu70 | libicu72 | libicu74 | libicu76 | libicu77 | libicu78'],'recommends':['xwayland','xdg-desktop-portal','xdg-desktop-portal-gtk | xdg-desktop-portal-kde','desktop-file-utils','shared-mime-info']},
+  'rpm':{'depends':['glibc >= 2.28','libgcc','libstdc++','fontconfig','libX11','libICE','libSM','gtk3','openssl-libs','libicu'],'recommends':['xorg-x11-server-Xwayland','xdg-desktop-portal']},
+  'archlinux':{'depends':['glibc','gcc-libs','fontconfig','libx11','libice','libsm','gtk3','openssl','icu'],'suggests':['xorg-xwayland','xdg-desktop-portal','xdg-desktop-portal-gtk','xdg-desktop-portal-kde']}
  },
  'rpm':{'compression':'gzip:9','packager':'KENNY'},'archlinux':{'packager':'KENNY'},'deb':{'compression':'gzip'},
 }
